@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f7f5ef">
+
+  <title>Rapid Fire | Phoenix AI Hackathon</title>
+
+  <!-- Rapid Fire Design -->
+  <link rel="stylesheet" href="rapid-fire.css">
+</head>
+
+<body>
+
+  <!-- =========================
+       HEADER
+  ========================== -->
+
+  <header class="topbar">
+    <div class="topbar-inner">
+
+      <a href="index.html" class="brand">
+        <div class="brand-icon">P</div>
+
+        <div>
+          <strong>PHOENIX RAPID FIRE</strong>
+          <span>AI Hackathon</span>
+        </div>
+      </a>
+
+      <a href="index.html" class="home-btn">
+        Home
+      </a>
+
+    </div>
+  </header>
+
+
+  <main class="main-container">
+
+
+    <!-- =========================
+         START SCREEN
+    ========================== -->
+
+    <section id="startScreen" class="screen active">
+
+      <div class="start-card">
+
+        <div class="start-hero">
+
+          <span class="tag">
+            PHOENIX AI HACKATHON
+          </span>
+
+          <h1>
+            RAPID <span>FIRE.</span>
+          </h1>
+
+          <p>
+            20 questions. One continuous clock.
+            Think before you click — once an answer
+            is selected, there is no going back.
+          </p>
+
+        </div>
+
+
+        <div class="start-content">
+
+          <div class="rules-grid">
+
+            <div class="rule-box">
+              <strong>20 Questions</strong>
+              <span>One attempt per question</span>
+            </div>
+
+            <div class="rule-box">
+              <strong>200 XP</strong>
+              <span>10 XP per correct answer</span>
+            </div>
+
+            <div class="rule-box">
+              <strong>Continuous Timer</strong>
+              <span>Starts with Question 1</span>
+            </div>
+
+            <div class="rule-box">
+              <strong>No Answer Reveal</strong>
+              <span>Your selection moves you forward</span>
+            </div>
+
+          </div>
+
+
+          <!-- Participant Name -->
+
+          <div class="input-group">
+
+            <label for="participantName">
+              Full Name
+            </label>
+
+            <input
+              type="text"
+              id="participantName"
+              placeholder="Enter your full name"
+              autocomplete="name"
+              maxlength="50"
+            >
+
+          </div>
+
+
+          <!-- Participant Batch -->
+
+          <div class="input-group">
+
+            <label for="participantBatch">
+              Batch
+            </label>
+
+            <select id="participantBatch">
+
+              <option value="">
+                Select your batch
+              </option>
+
+              <option value="1">Batch 1</option>
+              <option value="2">Batch 2</option>
+              <option value="3">Batch 3</option>
+              <option value="4">Batch 4</option>
+
+            </select>
+
+          </div>
+
+
+          <div id="startError" class="error-message"></div>
+
+
+          <button id="startBtn" class="primary-btn">
+            START RAPID FIRE ⚡
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         QUIZ SCREEN
+    ========================== -->
+
+    <section id="quizScreen" class="screen">
+
+      <div class="quiz-container">
+
+
+        <!-- LIVE STATUS -->
+
+        <div class="status-grid">
+
+          <div class="status-card">
+            <span>QUESTION</span>
+
+            <strong id="questionNumber">
+              1 / 20
+            </strong>
+          </div>
+
+
+          <div class="status-card">
+            <span>SCORE</span>
+
+            <strong id="liveScore" class="orange-text">
+              0 XP
+            </strong>
+          </div>
+
+
+          <div class="status-card">
+            <span>TIME</span>
+
+            <strong id="liveTimer">
+              00:00
+            </strong>
+          </div>
+
+        </div>
+
+
+
+        <!-- PROGRESS -->
+
+        <div class="progress-info">
+
+          <span>Rapid Fire Progress</span>
+
+          <span id="progressPercent">
+            5%
+          </span>
+
+        </div>
+
+
+        <div class="progress-track">
+
+          <div
+            id="progressBar"
+            class="progress-bar">
+          </div>
+
+        </div>
+
+
+
+        <!-- QUESTION -->
+
+        <div class="question-card">
+
+          <div id="questionLabel" class="question-label">
+            QUESTION 01
+          </div>
+
+
+          <h2 id="questionText">
+            Loading question...
+          </h2>
+
+
+          <div id="optionsContainer" class="options">
+
+            <!--
+              JavaScript automatically
+              inserts A, B, C and D here.
+            -->
+
+          </div>
+
+        </div>
+
+
+        <div class="quiz-note">
+          Once selected, your answer is locked.
+          There is no Previous or Next button.
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         RESULT SCREEN
+    ========================== -->
+
+    <section id="resultScreen" class="screen">
+
+      <div class="result-card">
+
+
+        <div class="result-top">
+
+          <div class="result-icon">
+            ⚡
+          </div>
+
+          <span class="tag">
+            RAPID FIRE COMPLETE
+          </span>
+
+
+          <h1 id="resultParticipantName">
+            Well Done!
+          </h1>
+
+
+          <p>
+            Your Rapid Fire attempt has been completed.
+          </p>
+
+        </div>
+
+
+
+        <div class="result-content">
+
+
+          <div class="final-score">
+
+            <span>FINAL SCORE</span>
+
+            <strong id="finalScore">
+              0 / 200 XP
+            </strong>
+
+          </div>
+
+
+
+          <div class="result-grid">
+
+
+            <div class="result-stat">
+
+              <span>
+                Correct
+              </span>
+
+              <strong id="finalCorrect">
+                0 / 20
+              </strong>
+
+            </div>
+
+
+            <div class="result-stat">
+
+              <span>
+                Total Time
+              </span>
+
+              <strong id="finalTime">
+                00:00
+              </strong>
+
+            </div>
+
+
+            <div class="result-stat">
+
+              <span>
+                Position
+              </span>
+
+              <strong id="finalRank">
+                —
+              </strong>
+
+            </div>
+
+
+          </div>
+
+
+          <div class="privacy-note">
+
+            Correct answers are not revealed.
+            Your score and completion time have been recorded.
+
+          </div>
+
+
+
+          <div class="result-buttons">
+
+            <button
+              id="leaderboardBtn"
+              class="primary-btn">
+
+              VIEW LEADERBOARD
+
+            </button>
+
+
+            <a
+              href="index.html"
+              class="secondary-btn">
+
+              RETURN HOME
+
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         LEADERBOARD SCREEN
+    ========================== -->
+
+    <section id="leaderboardScreen" class="screen">
+
+      <div class="leaderboard-card">
+
+
+        <div class="leaderboard-heading">
+
+          <span class="tag">
+            LIVE RANKINGS
+          </span>
+
+          <h1>
+            ⚡ Rapid Fire Leaderboard
+          </h1>
+
+          <p>
+            Phoenix AI Hackathon
+          </p>
+
+        </div>
+
+
+
+        <div class="leaderboard-table">
+
+
+          <div class="leaderboard-row leaderboard-header">
+
+            <div>RANK</div>
+
+            <div>PARTICIPANT</div>
+
+            <div>SCORE</div>
+
+            <div>TIME</div>
+
+          </div>
+
+
+
+          <!-- JS will generate participant rows -->
+
+          <div id="leaderboardRows"></div>
+
+
+        </div>
+
+
+
+        <button
+          id="backToResultBtn"
+          class="secondary-btn leaderboard-back">
+
+          ← BACK TO RESULT
+
+        </button>
+
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- =========================
+       JAVASCRIPT
+  ========================== -->
+
+  <script src="rapid-fire.js"></script>
+
+</body>
+
+</html>
