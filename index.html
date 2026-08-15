@@ -1,0 +1,1269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Phoenix AI Hackathon | SRKP PG Government College</title>
+
+  <style>
+    :root {
+      --bg: #f7f5ef;
+      --white: #ffffff;
+      --soft: #eef3f7;
+
+      --navy: #12233f;
+      --navy-light: #1d3152;
+
+      --orange: #e85d24;
+      --orange-dark: #c84917;
+
+      --gold: #d6a23a;
+
+      --text: #18202a;
+      --muted: #6f7782;
+      --border: #dde3e9;
+
+      --radius: 22px;
+      --shadow: 0 18px 45px rgba(18, 35, 63, 0.08);
+      --max-width: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .container {
+      width: min(var(--max-width), calc(100% - 30px));
+      margin: auto;
+    }
+
+    .section {
+      padding: 85px 0;
+    }
+
+    .section.white {
+      background: var(--white);
+    }
+
+    .section.soft {
+      background: var(--soft);
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 7px 12px;
+
+      background: rgba(232, 93, 36, 0.1);
+      color: var(--orange-dark);
+
+      border-radius: 50px;
+
+      font-size: 12px;
+      font-weight: 800;
+
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .section-heading {
+      max-width: 760px;
+      margin-bottom: 35px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(36px, 5vw, 58px);
+
+      color: var(--navy);
+
+      line-height: 1.05;
+
+      margin-top: 14px;
+      margin-bottom: 14px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    /* =========================
+       NAVBAR
+    ========================== */
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+
+      width: 100%;
+
+      z-index: 1000;
+
+      transition: 0.3s;
+    }
+
+    header.scrolled {
+      background: rgba(247, 245, 239, 0.95);
+
+      backdrop-filter: blur(15px);
+
+      border-bottom: 1px solid rgba(18, 35, 63, 0.08);
+    }
+
+    .navbar {
+      min-height: 76px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+
+      gap: 12px;
+    }
+
+    .brand img {
+      width: 46px;
+      height: 46px;
+
+      object-fit: contain;
+    }
+
+    .brand-text strong {
+      display: block;
+
+      color: var(--navy);
+
+      font-size: 15px;
+    }
+
+    .brand-text span {
+      display: block;
+
+      color: var(--muted);
+
+      font-size: 11px;
+
+      margin-top: 3px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+
+      gap: 24px;
+
+      font-size: 14px;
+      font-weight: 700;
+
+      color: var(--navy);
+    }
+
+    .nav-links a:hover {
+      color: var(--orange);
+    }
+
+    .btn {
+      border: none;
+
+      cursor: pointer;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 13px 19px;
+
+      border-radius: 14px;
+
+      font-weight: 800;
+
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: var(--navy);
+      color: white;
+    }
+
+    .btn-orange {
+      background: var(--orange);
+      color: white;
+    }
+
+    .btn-orange:hover {
+      background: var(--orange-dark);
+    }
+
+    .btn-light {
+      background: white;
+
+      color: var(--navy);
+
+      border: 1px solid rgba(18, 35, 63, 0.13);
+    }
+
+    .menu-btn {
+      display: none;
+
+      width: 44px;
+      height: 44px;
+
+      border-radius: 12px;
+
+      border: 1px solid var(--border);
+
+      background: white;
+
+      color: var(--navy);
+
+      font-size: 20px;
+
+      cursor: pointer;
+    }
+
+    .mobile-menu {
+      display: none;
+
+      background: rgba(247, 245, 239, 0.98);
+
+      border-top: 1px solid var(--border);
+    }
+
+    .mobile-menu a {
+      display: block;
+
+      padding: 12px 0;
+
+      font-weight: 700;
+
+      color: var(--navy);
+    }
+
+    /* =========================
+       HERO
+    ========================== */
+
+    .hero {
+      min-height: 100vh;
+
+      display: flex;
+      align-items: flex-end;
+
+      padding: 130px 0 70px;
+
+      position: relative;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(247, 245, 239, 0.98) 0%,
+          rgba(247, 245, 239, 0.9) 45%,
+          rgba(247, 245, 239, 0.35) 75%,
+          rgba(247, 245, 239, 0.1) 100%
+        ),
+        url("images/college.jpg") center / cover no-repeat;
+    }
+
+    .hero::after {
+      content: "";
+
+      position: absolute;
+
+      left: 0;
+      right: 0;
+      bottom: 0;
+
+      height: 150px;
+
+      background: linear-gradient(
+        transparent,
+        var(--bg)
+      );
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+
+      max-width: 780px;
+    }
+
+    .hero h1 {
+      font-size: clamp(54px, 9vw, 100px);
+
+      color: var(--navy);
+
+      line-height: 0.9;
+
+      letter-spacing: -5px;
+
+      margin-top: 18px;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 span {
+      color: var(--orange);
+    }
+
+    .hero-description {
+      max-width: 650px;
+
+      color: #4e5967;
+
+      font-size: 19px;
+
+      margin-bottom: 30px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+
+      gap: 12px;
+
+      margin-bottom: 38px;
+    }
+
+    .hero-stats {
+      max-width: 780px;
+
+      display: grid;
+
+      grid-template-columns: repeat(4, 1fr);
+
+      background: rgba(255, 255, 255, 0.85);
+
+      backdrop-filter: blur(12px);
+
+      border: 1px solid rgba(18, 35, 63, 0.08);
+
+      border-radius: 20px;
+
+      overflow: hidden;
+
+      box-shadow: var(--shadow);
+    }
+
+    .hero-stat {
+      padding: 20px;
+
+      border-right: 1px solid rgba(18, 35, 63, 0.08);
+    }
+
+    .hero-stat:last-child {
+      border-right: none;
+    }
+
+    .hero-stat strong {
+      display: block;
+
+      font-size: 24px;
+
+      color: var(--navy);
+    }
+
+    .hero-stat span {
+      color: var(--muted);
+
+      font-size: 12px;
+    }
+
+    /* =========================
+       ABOUT
+    ========================== */
+
+    .about-grid {
+      display: grid;
+
+      grid-template-columns: 1.1fr 0.9fr;
+
+      gap: 25px;
+    }
+
+    .about-main {
+      min-height: 360px;
+
+      background: var(--navy);
+
+      color: white;
+
+      border-radius: var(--radius);
+
+      padding: 35px;
+
+      display: flex;
+
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .about-main h3 {
+      font-size: 36px;
+
+      line-height: 1.1;
+
+      margin-top: 20px;
+      margin-bottom: 14px;
+    }
+
+    .about-main p {
+      color: rgba(255, 255, 255, 0.75);
+    }
+
+    .about-cards {
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      gap: 15px;
+    }
+
+    .small-card {
+      background: white;
+
+      border: 1px solid var(--border);
+
+      border-radius: 18px;
+
+      padding: 22px;
+    }
+
+    .small-card strong {
+      display: block;
+
+      color: var(--navy);
+
+      margin-bottom: 7px;
+    }
+
+    .small-card span {
+      color: var(--muted);
+
+      font-size: 14px;
+    }
+
+    /* =========================
+       LEADERSHIP
+    ========================== */
+
+    .leader-grid {
+      display: grid;
+
+      grid-template-columns: repeat(2, 1fr);
+
+      gap: 20px;
+    }
+
+    .leader-card {
+      display: grid;
+
+      grid-template-columns: 145px 1fr;
+
+      gap: 22px;
+
+      align-items: center;
+
+      background: white;
+
+      border: 1px solid var(--border);
+
+      border-radius: 22px;
+
+      padding: 18px;
+    }
+
+    .leader-card img {
+      width: 100%;
+
+      aspect-ratio: 1 / 1.1;
+
+      object-fit: cover;
+
+      border-radius: 16px;
+
+      background: var(--soft);
+    }
+
+    .leader-card h3 {
+      color: var(--navy);
+
+      font-size: 24px;
+
+      margin-bottom: 5px;
+    }
+
+    .role {
+      color: var(--orange-dark);
+
+      font-size: 14px;
+
+      font-weight: 800;
+
+      margin-bottom: 10px;
+    }
+
+    .leader-card p {
+      color: var(--muted);
+
+      font-size: 14px;
+    }
+
+    /* =========================
+       5 DAY JOURNEY
+    ========================== */
+
+    .journey-grid {
+      display: grid;
+
+      grid-template-columns: repeat(5, 1fr);
+
+      gap: 14px;
+    }
+
+    .day-card {
+      min-height: 230px;
+
+      background: white;
+
+      border: 1px solid var(--border);
+
+      border-radius: 18px;
+
+      padding: 22px;
+
+      position: relative;
+
+      overflow: hidden;
+
+      transition: 0.25s;
+    }
+
+    .day-card:hover {
+      transform: translateY(-5px);
+
+      box-shadow: var(--shadow);
+    }
+
+    .day-number {
+      color: var(--orange-dark);
+
+      font-size: 12px;
+
+      font-weight: 900;
+
+      letter-spacing: 1px;
+    }
+
+    .day-card h3 {
+      color: var(--navy);
+
+      margin-top: 12px;
+      margin-bottom: 8px;
+    }
+
+    .day-card p {
+      color: var(--muted);
+
+      font-size: 14px;
+    }
+
+    .day-strip {
+      position: absolute;
+
+      bottom: 0;
+      left: 0;
+
+      width: 100%;
+      height: 5px;
+
+      background: linear-gradient(
+        90deg,
+        var(--orange),
+        var(--gold)
+      );
+    }
+
+    /* =========================
+       BATCHES
+    ========================== */
+
+    .batch-grid {
+      display: grid;
+
+      grid-template-columns: repeat(4, 1fr);
+
+      gap: 16px;
+    }
+
+    .batch-card {
+      background: white;
+
+      border: 1px solid var(--border);
+
+      border-radius: 20px;
+
+      padding: 25px;
+    }
+
+    .batch-card h3 {
+      font-size: 42px;
+
+      color: var(--navy);
+
+      margin-top: 18px;
+    }
+
+    .batch-card p {
+      color: var(--muted);
+    }
+
+    /* =========================
+       CREATIONS
+    ========================== */
+
+    .gallery-grid {
+      display: grid;
+
+      grid-template-columns: 1.2fr 0.8fr 0.8fr;
+
+      gap: 16px;
+    }
+
+    .creation {
+      min-height: 260px;
+
+      border: 1px solid var(--border);
+
+      border-radius: 22px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(18, 35, 63, 0.03),
+          rgba(232, 93, 36, 0.08)
+        ),
+        white;
+
+      display: flex;
+
+      align-items: flex-end;
+
+      padding: 20px;
+    }
+
+    .creation.large {
+      min-height: 540px;
+    }
+
+    .creation-info {
+      width: 100%;
+
+      background: rgba(255, 255, 255, 0.88);
+
+      backdrop-filter: blur(10px);
+
+      border-radius: 15px;
+
+      padding: 14px;
+    }
+
+    .creation-info strong {
+      display: block;
+
+      color: var(--navy);
+    }
+
+    .creation-info span {
+      color: var(--muted);
+
+      font-size: 13px;
+    }
+
+    /* =========================
+       CHALLENGE
+    ========================== */
+
+    .challenge-box {
+      background: var(--navy);
+
+      color: white;
+
+      border-radius: 30px;
+
+      padding: 42px;
+    }
+
+    .challenge-box h2 {
+      color: white;
+    }
+
+    .challenge-box .section-heading p {
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .challenge-grid {
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      gap: 20px;
+    }
+
+    .challenge-card {
+      background: rgba(255, 255, 255, 0.06);
+
+      border: 1px solid rgba(255, 255, 255, 0.13);
+
+      border-radius: 20px;
+
+      padding: 26px;
+    }
+
+    .challenge-card h3 {
+      font-size: 25px;
+
+      margin-bottom: 10px;
+    }
+
+    .challenge-card p {
+      color: rgba(255, 255, 255, 0.7);
+
+      margin-bottom: 18px;
+    }
+
+    .chips {
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 8px;
+
+      margin-bottom: 20px;
+    }
+
+    .chip {
+      padding: 7px 11px;
+
+      background: rgba(255, 255, 255, 0.1);
+
+      border-radius: 50px;
+
+      font-size: 12px;
+
+      font-weight: 800;
+    }
+
+    .protocol {
+      grid-column: 1 / -1;
+    }
+
+    /* =========================
+       LEADERBOARD
+    ========================== */
+
+    .leaderboard {
+      background: white;
+
+      border: 1px solid var(--border);
+
+      border-radius: 20px;
+
+      overflow: hidden;
+    }
+
+    .leader-row {
+      display: grid;
+
+      grid-template-columns: 70px 1.4fr 0.7fr 0.7fr;
+
+      gap: 10px;
+
+      padding: 16px 18px;
+
+      align-items: center;
+
+      border-bottom: 1px solid var(--border);
+    }
+
+    .leader-row.header {
+      background: var(--soft);
+
+      color: var(--muted);
+
+      font-size: 12px;
+
+      font-weight: 900;
+    }
+
+    .rank {
+      width: 35px;
+      height: 35px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 10px;
+
+      background: var(--soft);
+
+      color: var(--navy);
+
+      font-weight: 900;
+    }
+
+    .locked-board {
+      margin-top: 18px;
+
+      padding: 24px;
+
+      text-align: center;
+
+      border: 1px dashed rgba(18, 35, 63, 0.25);
+
+      border-radius: 18px;
+
+      color: var(--muted);
+    }
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    footer {
+      background: #0f1d33;
+
+      color: white;
+
+      padding: 45px 0 25px;
+    }
+
+    .footer-grid {
+      display: grid;
+
+      grid-template-columns: 1.3fr 0.8fr 0.8fr;
+
+      gap: 30px;
+
+      margin-bottom: 35px;
+    }
+
+    footer p,
+    footer a {
+      color: rgba(255, 255, 255, 0.68);
+    }
+
+    footer a:hover {
+      color: white;
+    }
+
+    footer h4 {
+      margin-bottom: 12px;
+    }
+
+    .copyright {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+      padding-top: 20px;
+
+      display: flex;
+      justify-content: space-between;
+
+      gap: 15px;
+
+      flex-wrap: wrap;
+
+      color: rgba(255, 255, 255, 0.48);
+
+      font-size: 13px;
+    }
+
+    /* =========================
+       MOBILE
+    ========================== */
+
+    @media (max-width: 950px) {
+
+      .nav-links {
+        display: none;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+
+      .about-grid,
+      .challenge-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .journey-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .batch-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .leader-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .creation.large {
+        grid-column: 1 / -1;
+
+        min-height: 360px;
+      }
+
+      .protocol {
+        grid-column: auto;
+      }
+
+      .hero {
+        background:
+          linear-gradient(
+            180deg,
+            rgba(247, 245, 239, 0.9),
+            rgba(247, 245, 239, 0.8),
+            rgba(247, 245, 239, 0.97)
+          ),
+          url("images/college.jpg") center / cover no-repeat;
+      }
+    }
+
+    @media (max-width: 650px) {
+
+      .section {
+        padding: 65px 0;
+      }
+
+      .navbar {
+        min-height: 68px;
+      }
+
+      .brand-text span {
+        display: none;
+      }
+
+      .navbar > .btn-primary {
+        display: none;
+      }
+
+      .hero {
+        min-height: auto;
+
+        padding: 120px 0 50px;
+      }
+
+      .hero h1 {
+        font-size: clamp(52px, 16vw, 76px);
+
+        letter-spacing: -3px;
+      }
+
+      .hero-description {
+        font-size: 16px;
+      }
+
+      .hero-stats {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .hero-stat:nth-child(2) {
+        border-right: none;
+      }
+
+      .about-cards,
+      .journey-grid,
+      .batch-grid,
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .creation.large {
+        min-height: 290px;
+      }
+
+      .leader-card {
+        grid-template-columns: 90px 1fr;
+      }
+
+      .leader-row.header {
+        display: none;
+      }
+
+      .leader-row {
+        grid-template-columns: 55px 1fr;
+      }
+
+      .leader-row div:nth-child(3),
+      .leader-row div:nth-child(4) {
+        grid-column: 2;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .challenge-box {
+        padding: 28px 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header id="header">
+
+  <div class="container navbar">
+
+    <a href="#home" class="brand">
+
+      <img src="images/logo.png" alt="Phoenix Logo">
+
+      <div class="brand-text">
+        <strong>PHOENIX AI HACKATHON</strong>
+        <span>SRKP PG Government College, Kishangarh</span>
+      </div>
+
+    </a>
+
+    <nav class="nav-links">
+
+      <a href="#about">About</a>
+
+      <a href="#journey">5-Day Journey</a>
+
+      <a href="#batches">Batches</a>
+
+      <a href="#creations">Creations</a>
+
+      <a href="#challenge">Hackathon</a>
+
+      <a href="#leaderboard">Leaderboard</a>
+
+    </nav>
+
+    <button class="btn btn-primary" onclick="showMessage('Phoenix Access Portal will be connected next.')">
+      Enter Hackathon
+    </button>
+
+    <button class="menu-btn" id="menuBtn">
+      ☰
+    </button>
+
+  </div>
+
+  <div class="mobile-menu" id="mobileMenu">
+
+    <div class="container">
+
+      <a href="#about">About</a>
+
+      <a href="#journey">5-Day Journey</a>
+
+      <a href="#batches">Batches</a>
+
+      <a href="#creations">Creations</a>
+
+      <a href="#challenge">Hackathon</a>
+
+      <a href="#leaderboard">Leaderboard</a>
+
+    </div>
+
+  </div>
+
+</header>
+
+
+<main>
+
+<section class="hero" id="home">
+
+  <div class="container">
+
+    <div class="hero-content">
+
+      <span class="eyebrow">
+        AI Foundation Course
+      </span>
+
+      <h1>
+        LEARN.<br>
+        CREATE.<br>
+        <span>COMPETE. RISE.</span>
+      </h1>
+
+      <p class="hero-description">
+
+        A premium digital experience documenting the AI Foundation Course at
+        SRKP PG Government College, Kishangarh — from five days of learning
+        to one final Phoenix challenge.
+
+      </p>
+
+      <div class="hero-buttons">
+
+        <a href="#journey" class="btn btn-orange">
+          Explore the Journey →
+        </a>
+
+        <button class="btn btn-light"
+        onclick="showMessage('Phoenix Quest will be connected in the next coding phase.')">
+
+          Enter Phoenix Quest
+
+        </button>
+
+      </div>
+
+
+      <div class="hero-stats">
+
+        <div class="hero-stat">
+          <strong>4</strong>
+          <span>Batches</span>
+        </div>
+
+        <div class="hero-stat">
+          <strong>140+</strong>
+          <span>Learners</span>
+        </div>
+
+        <div class="hero-stat">
+          <strong>5</strong>
+          <span>Days Per Batch</span>
+        </div>
+
+        <div class="hero-stat">
+          <strong>1000</strong>
+          <span>Total Hackathon XP</span>
+        </div>
+
+      </div>
+
+  </div>
+
+</section>
+
+
+<section class="section" id="about">
+
+<div class="container">
+
+  <div class="section-heading">
+
+    <span class="eyebrow">
+      About the Course
+    </span>
+
+    <h2>
+      From AI users to digital creators.
+    </h2>
+
+    <p>
+
+      The AI Foundation Course combines creative AI use, research,
+      prompting, digital communication and AI-assisted web development
+      into a practical learning journey.
+
+    </p>
+
+  </div>
+
+
+  <div class="about-grid">
+
+    <div class="about-main">
+
+      <div>
+
+        <span class="eyebrow">
+          AI FOUNDATION COURSE
+        </span>
+
+        <h3>
+          A five-day journey built around doing, not just knowing.
+        </h3>
+
+        <p>
+
+          Participants explore AI as a creative partner,
+          learning assistant, research companion and development tool,
+          then transform those ideas into real digital creations.
+
+        </p>
+
+      </div>
+
+      <p>
+        SRKP PG Government College, Kishangarh
+      </p>
+
+    </div>
+
+
+    <div class="about-cards">
+
+      <div class="small-card">
+
+        <strong>Creative AI</strong>
+
+        <span>
+          Posters, visual communication, storytelling and content.
+        </span>
+
+      </div>
+
+
+      <div class="small-card">
+
+        <strong>Prompting</strong>
+
+        <span>
+          Clear instructions, refinement and AI-native thinking.
+   
