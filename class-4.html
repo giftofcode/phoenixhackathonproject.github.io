@@ -1,0 +1,2245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0"
+>
+
+<meta
+  name="theme-color"
+  content="#f5f1e8"
+>
+
+<title>
+  Class 4 | From Learning to Building
+</title>
+
+
+<style>
+
+:root{
+
+  --cream:#f5f1e8;
+  --paper:#fffdf8;
+
+  --navy:#142f48;
+  --blue:#587f9c;
+
+  --orange:#e7652d;
+  --green:#31946c;
+  --gold:#d9a64b;
+
+  --text:#27343e;
+  --muted:#71808a;
+
+  --line:#ddd6ca;
+
+  --dark:#081522;
+}
+
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+
+html{
+  scroll-behavior:smooth;
+}
+
+
+body{
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  background:
+    var(--cream);
+
+  color:
+    var(--text);
+
+  line-height:1.65;
+
+  overflow-x:hidden;
+}
+
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+
+button{
+  font:inherit;
+}
+
+
+img{
+  display:block;
+  max-width:100%;
+}
+
+
+.container{
+
+  width:
+    min(
+      1100px,
+      calc(100% - 28px)
+    );
+
+  margin:auto;
+}
+
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+header{
+
+  position:sticky;
+
+  top:0;
+
+  z-index:100;
+
+  background:
+    rgba(245,241,232,.94);
+
+  -webkit-backdrop-filter:
+    blur(14px);
+
+  backdrop-filter:
+    blur(14px);
+
+  border-bottom:
+    1px solid var(--line);
+}
+
+
+.nav{
+
+  min-height:68px;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:
+    space-between;
+
+  gap:12px;
+}
+
+
+.brand{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:10px;
+}
+
+
+.brand img{
+
+  width:42px;
+  height:42px;
+
+  object-fit:contain;
+
+  border-radius:12px;
+
+  background:#ffffff;
+}
+
+
+.brand strong{
+
+  display:block;
+
+  color:
+    var(--navy);
+
+  font-size:13px;
+}
+
+
+.brand span{
+
+  display:block;
+
+  color:
+    var(--muted);
+
+  font-size:10px;
+}
+
+
+.back{
+
+  padding:
+    9px 12px;
+
+  border:
+    1px solid var(--line);
+
+  border-radius:10px;
+
+  background:#ffffff;
+
+  font-size:12px;
+
+  font-weight:800;
+}
+
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero{
+
+  position:relative;
+
+  overflow:hidden;
+
+  padding:
+    82px 0 64px;
+
+  background:
+
+    radial-gradient(
+      circle at 88% 15%,
+      rgba(231,101,45,.18),
+      transparent 30%
+    ),
+
+    radial-gradient(
+      circle at 10% 82%,
+      rgba(49,148,108,.17),
+      transparent 32%
+    ),
+
+    var(--cream);
+}
+
+
+.hero::after{
+
+  content:"BUILD";
+
+  position:absolute;
+
+  right:-15px;
+
+  bottom:-45px;
+
+  color:
+    rgba(20,47,72,.04);
+
+  font-size:
+    clamp(
+      100px,
+      20vw,
+      220px
+    );
+
+  font-weight:900;
+
+  letter-spacing:-10px;
+
+  pointer-events:none;
+}
+
+
+.kicker{
+
+  position:relative;
+
+  z-index:2;
+
+  display:inline-block;
+
+  padding:
+    7px 11px;
+
+  border-radius:50px;
+
+  background:
+    rgba(231,101,45,.10);
+
+  color:
+    var(--orange);
+
+  font-size:11px;
+
+  font-weight:900;
+
+  letter-spacing:1.3px;
+}
+
+
+.hero h1{
+
+  position:relative;
+
+  z-index:2;
+
+  max-width:900px;
+
+  margin:
+    17px 0 19px;
+
+  color:
+    var(--navy);
+
+  font-size:
+    clamp(
+      44px,
+      9vw,
+      90px
+    );
+
+  line-height:.95;
+
+  letter-spacing:-4px;
+}
+
+
+.hero h1 span{
+
+  color:
+    var(--green);
+}
+
+
+.hero p{
+
+  position:relative;
+
+  z-index:2;
+
+  max-width:730px;
+
+  color:#596772;
+
+  font-size:17px;
+}
+
+
+.hero-meta{
+
+  position:relative;
+
+  z-index:2;
+
+  display:flex;
+
+  flex-wrap:wrap;
+
+  gap:8px;
+
+  margin-top:23px;
+}
+
+
+.meta{
+
+  padding:
+    8px 11px;
+
+  border:
+    1px solid var(--line);
+
+  border-radius:50px;
+
+  background:
+    rgba(255,255,255,.68);
+
+  color:
+    var(--navy);
+
+  font-size:11px;
+
+  font-weight:800;
+}
+
+
+
+/* =========================================
+   GENERAL SECTIONS
+========================================= */
+
+.section{
+
+  padding:
+    68px 0;
+}
+
+
+.white{
+
+  background:
+    var(--paper);
+}
+
+
+.soft{
+
+  background:
+    #edf1ef;
+}
+
+
+.dark-section{
+
+  background:
+    var(--dark);
+
+  color:#ffffff;
+}
+
+
+.heading{
+
+  max-width:790px;
+
+  margin-bottom:30px;
+}
+
+
+.heading small{
+
+  color:
+    var(--green);
+
+  font-size:11px;
+
+  font-weight:900;
+
+  letter-spacing:1px;
+}
+
+
+.heading h2{
+
+  color:
+    var(--navy);
+
+  font-size:
+    clamp(
+      30px,
+      6vw,
+      52px
+    );
+
+  line-height:1.05;
+
+  margin:
+    8px 0 10px;
+}
+
+
+.dark-section .heading h2{
+
+  color:#ffffff;
+}
+
+
+.heading p{
+
+  color:
+    var(--muted);
+}
+
+
+.dark-section .heading p{
+
+  color:#aab6c1;
+}
+
+
+
+/* =========================================
+   CLASS JOURNEY
+========================================= */
+
+.journey-grid{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(4,1fr);
+
+  gap:11px;
+}
+
+
+.journey-card{
+
+  min-height:180px;
+
+  padding:20px;
+
+  border-radius:18px;
+
+  border:
+    1px solid var(--line);
+
+  background:#ffffff;
+}
+
+
+.journey-card small{
+
+  display:block;
+
+  color:
+    var(--orange);
+
+  font-size:10px;
+
+  font-weight:900;
+
+  letter-spacing:1px;
+}
+
+
+.journey-card h3{
+
+  margin:
+    8px 0 6px;
+
+  color:
+    var(--navy);
+
+  font-size:18px;
+}
+
+
+.journey-card p{
+
+  color:
+    var(--muted);
+
+  font-size:12px;
+}
+
+
+
+/* =========================================
+   VIDEO
+========================================= */
+
+.video-shell{
+
+  overflow:hidden;
+
+  border-radius:22px;
+
+  background:#ffffff;
+
+  border:
+    1px solid var(--line);
+
+  box-shadow:
+    0 20px 55px
+    rgba(20,47,72,.08);
+}
+
+
+.video-frame{
+
+  width:100%;
+
+  aspect-ratio:
+    16 / 9;
+
+  background:#000000;
+}
+
+
+.video-frame iframe{
+
+  width:100%;
+  height:100%;
+
+  border:0;
+
+  display:block;
+}
+
+
+.video-info{
+
+  padding:22px;
+}
+
+
+.video-info small{
+
+  color:
+    var(--orange);
+
+  font-weight:900;
+}
+
+
+.video-info h3{
+
+  color:
+    var(--navy);
+
+  margin:
+    5px 0;
+}
+
+
+.video-info p{
+
+  color:
+    var(--muted);
+
+  font-size:13px;
+}
+
+
+
+/* =========================================
+   DEMO GALLERY
+========================================= */
+
+.demo-grid{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(2,1fr);
+
+  gap:14px;
+}
+
+
+.demo-card{
+
+  position:relative;
+
+  overflow:hidden;
+
+  min-height:245px;
+
+  padding:22px;
+
+  display:flex;
+
+  flex-direction:column;
+
+  justify-content:
+    space-between;
+
+  border-radius:20px;
+
+  border:
+    1px solid var(--line);
+
+  background:#ffffff;
+
+  transition:
+    transform .2s ease,
+    box-shadow .2s ease;
+}
+
+
+.demo-card:hover{
+
+  transform:
+    translateY(-4px);
+
+  box-shadow:
+    0 18px 45px
+    rgba(20,47,72,.09);
+}
+
+
+.demo-top{
+
+  display:flex;
+
+  justify-content:
+    space-between;
+
+  align-items:flex-start;
+
+  gap:10px;
+}
+
+
+.demo-number{
+
+  width:42px;
+  height:42px;
+
+  display:grid;
+
+  place-items:center;
+
+  border-radius:12px;
+
+  background:
+    var(--navy);
+
+  color:#ffffff;
+
+  font-weight:900;
+}
+
+
+.live-badge{
+
+  padding:
+    6px 9px;
+
+  border-radius:50px;
+
+  background:
+    rgba(49,148,108,.11);
+
+  color:
+    var(--green);
+
+  font-size:9px;
+
+  font-weight:900;
+
+  letter-spacing:1px;
+}
+
+
+.demo-card h3{
+
+  color:
+    var(--navy);
+
+  font-size:23px;
+
+  margin:
+    18px 0 5px;
+}
+
+
+.student-name{
+
+  color:
+    var(--green);
+
+  font-size:12px;
+
+  font-weight:900;
+}
+
+
+.demo-card p{
+
+  margin-top:8px;
+
+  color:
+    var(--muted);
+
+  font-size:12px;
+}
+
+
+.demo-btn{
+
+  display:inline-flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  min-height:46px;
+
+  margin-top:20px;
+
+  padding:
+    11px 15px;
+
+  border-radius:12px;
+
+  background:
+    var(--navy);
+
+  color:#ffffff;
+
+  font-size:12px;
+
+  font-weight:900;
+}
+
+
+
+/* =========================================
+   OBSERVE THE DEMOS
+========================================= */
+
+.observe-grid{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(3,1fr);
+
+  gap:12px;
+}
+
+
+.observe-card{
+
+  padding:20px;
+
+  border-radius:18px;
+
+  background:#ffffff;
+
+  border:
+    1px solid var(--line);
+}
+
+
+.observe-icon{
+
+  font-size:28px;
+
+  margin-bottom:9px;
+}
+
+
+.observe-card h3{
+
+  color:
+    var(--navy);
+
+  font-size:17px;
+}
+
+
+.observe-card p{
+
+  color:
+    var(--muted);
+
+  font-size:12px;
+
+  margin-top:5px;
+}
+
+
+
+/* =========================================
+   QUICK RECALL
+========================================= */
+
+.recall-grid{
+
+  display:grid;
+
+  gap:10px;
+}
+
+
+.recall{
+
+  overflow:hidden;
+
+  border:
+    1px solid var(--line);
+
+  border-radius:15px;
+
+  background:#ffffff;
+}
+
+
+.recall button{
+
+  width:100%;
+
+  padding:17px;
+
+  border:0;
+
+  background:#ffffff;
+
+  text-align:left;
+
+  color:
+    var(--navy);
+
+  font-weight:900;
+
+  cursor:pointer;
+}
+
+
+.answer{
+
+  display:none;
+
+  padding:
+    0 17px 17px;
+
+  color:
+    var(--muted);
+
+  font-size:13px;
+}
+
+
+.recall.open .answer{
+
+  display:block;
+}
+
+
+
+/* =========================================
+   FINAL TAKEAWAY
+========================================= */
+
+.takeaway{
+
+  padding:
+    42px 25px;
+
+  border-radius:25px;
+
+  text-align:center;
+
+  background:
+
+    radial-gradient(
+      circle at top right,
+      rgba(49,148,108,.22),
+      transparent 35%
+    ),
+
+    var(--navy);
+
+  color:#ffffff;
+}
+
+
+.takeaway h2{
+
+  margin-top:14px;
+
+  font-size:
+    clamp(
+      32px,
+      7vw,
+      56px
+    );
+
+  line-height:1.05;
+}
+
+
+.takeaway p{
+
+  max-width:700px;
+
+  margin:
+    14px auto;
+
+  color:#b8c3cc;
+}
+
+
+.takeaway-flow{
+
+  max-width:760px;
+
+  margin:
+    25px auto 0;
+
+  display:grid;
+
+  grid-template-columns:
+    1fr auto 1fr auto 1fr;
+
+  gap:8px;
+
+  align-items:center;
+}
+
+
+.takeaway-flow div{
+
+  padding:14px;
+
+  border-radius:13px;
+
+  background:
+    rgba(255,255,255,.07);
+}
+
+
+.takeaway-flow strong{
+
+  display:block;
+}
+
+
+.takeaway-flow span{
+
+  display:block;
+
+  color:#b8c3cc;
+
+  font-size:10px;
+}
+
+
+.next-row{
+
+  display:flex;
+
+  justify-content:center;
+
+  flex-wrap:wrap;
+
+  gap:10px;
+
+  margin-top:24px;
+}
+
+
+.next{
+
+  padding:
+    13px 18px;
+
+  border-radius:12px;
+
+  border:0;
+
+  background:#ffffff;
+
+  color:
+    var(--navy);
+
+  font-weight:900;
+
+  cursor:pointer;
+}
+
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media(max-width:760px){
+
+  .hero{
+
+    padding:
+      55px 0 44px;
+  }
+
+
+  .hero h1{
+
+    letter-spacing:-2px;
+  }
+
+
+  .journey-grid,
+  .demo-grid,
+  .observe-grid{
+
+    grid-template-columns:1fr;
+  }
+
+
+  .takeaway-flow{
+
+    grid-template-columns:1fr;
+  }
+
+
+  .takeaway-flow > strong{
+
+    transform:
+      rotate(90deg);
+  }
+
+}
+
+
+@media(max-width:520px){
+
+  .section{
+
+    padding:
+      52px 0;
+  }
+
+
+  .brand span{
+
+    display:none;
+  }
+
+
+  .demo-card{
+
+    min-height:220px;
+  }
+
+}
+
+
+</style>
+
+</head>
+
+<!-- ===== END CLASS-4 CHUNK 1 ===== -->
+<!-- ===== START CLASS-4 CHUNK 2 ===== -->
+
+<body>
+
+
+<!-- =========================================
+     HEADER
+========================================= -->
+
+<header>
+
+  <div class="container nav">
+
+    <a
+      href="index.html"
+      class="brand"
+    >
+
+      <img
+        src="images/logo.jpg"
+        alt="Phoenix Logo"
+      >
+
+      <div>
+
+        <strong>
+          PHOENIX CLASSROOM
+        </strong>
+
+        <span>
+          AI Foundation Course • Day 04
+        </span>
+
+      </div>
+
+    </a>
+
+
+    <a
+      href="index.html#journey"
+      class="back"
+    >
+      ← Journey
+    </a>
+
+  </div>
+
+</header>
+
+
+
+<main>
+
+
+<!-- =========================================
+     HERO
+========================================= -->
+
+<section class="hero">
+
+  <div class="container">
+
+    <span class="kicker">
+      DAY 04 • PRACTICAL CLASSROOM
+    </span>
+
+
+    <h1>
+
+      FROM LEARNING<br>
+
+      <span>
+        TO BUILDING.
+      </span>
+
+    </h1>
+
+
+    <p>
+      Day 4 is where the classroom becomes practical.
+
+      Instead of only talking about ideas,
+      this page is built around watching the session,
+      observing real student projects and understanding
+      what a finished digital creation can look like.
+    </p>
+
+
+    <div class="hero-meta">
+
+      <span class="meta">
+        🎥 Video-First Class
+      </span>
+
+      <span class="meta">
+        🌐 Live Websites
+      </span>
+
+      <span class="meta">
+        👨‍💻 Student Builders
+      </span>
+
+      <span class="meta">
+        🔍 Observe & Learn
+      </span>
+
+      <span class="meta">
+        🚀 Build Mindset
+      </span>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================
+     CLASS JOURNEY
+========================================= -->
+
+<section class="section white">
+
+  <div class="container">
+
+    <div class="heading">
+
+      <small>
+        🔄 DAY 04 FLOW
+      </small>
+
+      <h2>
+        Watch.
+        Observe.
+        Compare.
+        Build.
+      </h2>
+
+      <p>
+        Since Day 4 is a video-first practical class,
+        the strongest way to revisit it is to combine
+        the recorded session with real student work.
+      </p>
+
+    </div>
+
+
+    <div class="journey-grid">
+
+
+      <article class="journey-card">
+
+        <small>
+          01
+        </small>
+
+        <h3>
+          Watch
+        </h3>
+
+        <p>
+          Revisit the complete Day 4
+          classroom session.
+        </p>
+
+      </article>
+
+
+      <article class="journey-card">
+
+        <small>
+          02
+        </small>
+
+        <h3>
+          Observe
+        </h3>
+
+        <p>
+          Open real student websites
+          and study how they are built.
+        </p>
+
+      </article>
+
+
+      <article class="journey-card">
+
+        <small>
+          03
+        </small>
+
+        <h3>
+          Compare
+        </h3>
+
+        <p>
+          Notice how different students
+          approached different problems.
+        </p>
+
+      </article>
+
+
+      <article class="journey-card">
+
+        <small>
+          04
+        </small>
+
+        <h3>
+          Build
+        </h3>
+
+        <p>
+          Use the examples as inspiration
+          for your own next creation.
+        </p>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================
+     FULL DAY 4 CLASS
+========================================= -->
+
+<section class="section soft">
+
+  <div class="container">
+
+    <div class="heading">
+
+      <small>
+        🎥 WATCH THE CLASS AGAIN
+      </small>
+
+      <h2>
+        Return to the real Day 4 session.
+      </h2>
+
+      <p>
+        This is the primary classroom resource for Day 4.
+        Watch the session first, then explore the student
+        projects below with fresh eyes.
+      </p>
+
+    </div>
+
+
+    <div class="video-shell">
+
+      <div class="video-frame">
+
+        <iframe
+          src="https://www.youtube.com/embed/VY3tRleXlK8"
+          title="Day 4 Full Online Class"
+          loading="lazy"
+          allow="
+            accelerometer;
+            autoplay;
+            clipboard-write;
+            encrypted-media;
+            gyroscope;
+            picture-in-picture;
+            web-share
+          "
+          allowfullscreen>
+        </iframe>
+
+      </div>
+
+
+      <div class="video-info">
+
+        <small>
+          ▶ FULL ONLINE CLASS
+        </small>
+
+        <h3>
+          Day 04 Classroom Session
+        </h3>
+
+        <p>
+          Revisit the complete session and then move
+          directly into the live student demos below.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================
+     STUDENT DEMOS
+========================================= -->
+
+<section class="section white">
+
+  <div class="container">
+
+    <div class="heading">
+
+      <small>
+        🌐 WHAT OUR STUDENTS BUILT
+      </small>
+
+      <h2>
+        Five students.
+        Five live digital projects.
+      </h2>
+
+      <p>
+        These are not screenshots.
+
+        Each card opens an actual live website created
+        by a student. Explore them like a builder:
+        notice structure, navigation, content,
+        visual choices and functionality.
+      </p>
+
+    </div>
+
+
+    <div class="demo-grid">
+
+
+      <!-- =====================================
+           DEMO 1 — ANJALI
+      ====================================== -->
+
+      <article class="demo-card">
+
+        <div>
+
+          <div class="demo-top">
+
+            <div class="demo-number">
+              01
+            </div>
+
+            <span class="live-badge">
+              ● LIVE PROJECT
+            </span>
+
+          </div>
+
+
+          <h3>
+            Kishangarh View
+          </h3>
+
+          <div class="student-name">
+            Built by Anjali
+          </div>
+
+          <p>
+            Explore a location-focused website
+            presenting Kishangarh through a
+            structured digital experience.
+          </p>
+
+        </div>
+
+
+        <a
+          href="https://anjalijayalwal.github.io/Kishangarhview23.github.io/"
+          target="_blank"
+          rel="noopener"
+          class="demo-btn"
+        >
+          OPEN LIVE DEMO ↗
+        </a>
+
+      </article>
+
+
+
+      <!-- =====================================
+           DEMO 2 — ANISH JODHA
+      ====================================== -->
+
+      <article class="demo-card">
+
+        <div>
+
+          <div class="demo-top">
+
+            <div class="demo-number">
+              02
+            </div>
+
+            <span class="live-badge">
+              ● LIVE PROJECT
+            </span>
+
+          </div>
+
+
+          <h3>
+            Cheaper Phones
+          </h3>
+
+          <div class="student-name">
+            Built by Anish Jodha
+          </div>
+
+          <p>
+            A product-oriented website concept
+            showing how digital presentation
+            can be used for mobile products.
+          </p>
+
+        </div>
+
+
+        <a
+          href="https://anishits.github.io/cheaperphones/"
+          target="_blank"
+          rel="noopener"
+          class="demo-btn"
+        >
+          OPEN LIVE DEMO ↗
+        </a>
+
+      </article>
+
+
+
+      <!-- =====================================
+           DEMO 3 — ANKIT KUMAR JANGID
+      ====================================== -->
+
+      <article class="demo-card">
+
+        <div>
+
+          <div class="demo-top">
+
+            <div class="demo-number">
+              03
+            </div>
+
+            <span class="live-badge">
+              ● LIVE PROJECT
+            </span>
+
+          </div>
+
+
+          <h3>
+            InfiniteX
+          </h3>
+
+          <div class="student-name">
+            Built by Ankit Kumar Jangid
+          </div>
+
+          <p>
+            A broader digital project with
+            a business-focused section and
+            a more layered website experience.
+          </p>
+
+        </div>
+
+
+        <a
+          href="https://infinitexankit.github.io/#business"
+          target="_blank"
+          rel="noopener"
+          class="demo-btn"
+        >
+          OPEN LIVE DEMO ↗
+        </a>
+
+      </article>
+
+
+
+      <!-- =====================================
+           DEMO 4 — RADHIKA KANWAR
+      ====================================== -->
+
+      <article class="demo-card">
+
+        <div>
+
+          <div class="demo-top">
+
+            <div class="demo-number">
+              04
+            </div>
+
+            <span class="live-badge">
+              ● LIVE PROJECT
+            </span>
+
+          </div>
+
+
+          <h3>
+            Glow Skin
+          </h3>
+
+          <div class="student-name">
+            Built by Radhika Kanwar
+          </div>
+
+          <p>
+            A beauty and skincare-oriented
+            website showing product presentation,
+            visual branding and digital layout.
+          </p>
+
+        </div>
+
+
+        <a
+          href="https://kanwarchandu663.github.io/glowskin-/"
+          target="_blank"
+          rel="noopener"
+          class="demo-btn"
+        >
+          OPEN LIVE DEMO ↗
+        </a>
+
+      </article>
+
+
+
+      <!-- =====================================
+           DEMO 5 — SOFIYA
+      ====================================== -->
+
+      <article class="demo-card">
+
+        <div>
+
+          <div class="demo-top">
+
+            <div class="demo-number">
+              05
+            </div>
+
+            <span class="live-badge">
+              ● LIVE PROJECT
+            </span>
+
+          </div>
+
+
+          <h3>
+            Sofiya's Project
+          </h3>
+
+          <div class="student-name">
+            Built by Sofiya
+          </div>
+
+          <p>
+            A live student-built website that
+            demonstrates how classroom learning
+            can become a published web project.
+          </p>
+
+        </div>
+
+
+        <a
+          href="https://sofiya07x.github.io"
+          target="_blank"
+          rel="noopener"
+          class="demo-btn"
+        >
+          OPEN LIVE DEMO ↗
+        </a>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ===== END CLASS-4 CHUNK 2 ===== -->
+  <!-- ===== START CLASS-4 CHUNK 3 ===== -->
+
+
+<!-- =========================================
+     WHAT TO OBSERVE
+========================================= -->
+
+<section class="section soft">
+
+  <div class="container">
+
+    <div class="heading">
+
+      <small>
+        🔍 OBSERVE LIKE A BUILDER
+      </small>
+
+      <h2>
+        Don't just open the websites.
+        Study them.
+      </h2>
+
+      <p>
+        Every student project can teach you something.
+        Look beyond the final appearance and notice
+        how the website has been structured.
+      </p>
+
+    </div>
+
+
+    <div class="observe-grid">
+
+
+      <article class="observe-card">
+
+        <div class="observe-icon">
+          🧭
+        </div>
+
+        <h3>
+          Navigation
+        </h3>
+
+        <p>
+          How does the website help the visitor
+          move from one section to another?
+        </p>
+
+      </article>
+
+
+      <article class="observe-card">
+
+        <div class="observe-icon">
+          🎨
+        </div>
+
+        <h3>
+          Visual Identity
+        </h3>
+
+        <p>
+          Notice colours, spacing,
+          typography and the overall
+          visual personality.
+        </p>
+
+      </article>
+
+
+      <article class="observe-card">
+
+        <div class="observe-icon">
+          🧱
+        </div>
+
+        <h3>
+          Structure
+        </h3>
+
+        <p>
+          What sections appear first?
+          How is information grouped
+          and presented?
+        </p>
+
+      </article>
+
+
+      <article class="observe-card">
+
+        <div class="observe-icon">
+          📱
+        </div>
+
+        <h3>
+          Mobile Experience
+        </h3>
+
+        <p>
+          Open the site on your phone.
+          Does everything remain readable,
+          usable and properly aligned?
+        </p>
+
+      </article>
+
+
+      <article class="observe-card">
+
+        <div class="observe-icon">
+          ⚙️
+        </div>
+
+        <h3>
+          Functionality
+        </h3>
+
+        <p>
+          Test buttons, links,
+          menus and interactive
+          elements.
+        </p>
+
+      </article>
+
+
+      <article class="observe-card">
+
+        <div class="observe-icon">
+          💡
+        </div>
+
+        <h3>
+          The Idea
+        </h3>
+
+        <p>
+          Most importantly:
+          what real need or idea
+          is this website trying to serve?
+        </p>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================
+     QUICK RECALL
+========================================= -->
+
+<section class="section white">
+
+  <div class="container">
+
+    <div class="heading">
+
+      <small>
+        🧠 QUICK RECALL
+      </small>
+
+      <h2>
+        Did you observe
+        or just scroll?
+      </h2>
+
+      <p>
+        Tap each question to reveal
+        a useful reminder.
+      </p>
+
+    </div>
+
+
+    <div class="recall-grid">
+
+
+      <div class="recall">
+
+        <button type="button">
+          Why should we open real student websites? +
+        </button>
+
+        <div class="answer">
+          Because a live website lets you observe
+          structure, navigation, visual design,
+          responsiveness and functionality
+          in a real working project.
+        </div>
+
+      </div>
+
+
+      <div class="recall">
+
+        <button type="button">
+          What should you check first on mobile? +
+        </button>
+
+        <div class="answer">
+          Check whether text is readable,
+          buttons are easy to tap,
+          sections fit the screen
+          and nothing is cut or overflowing.
+        </div>
+
+      </div>
+
+
+      <div class="recall">
+
+        <button type="button">
+          Is a beautiful website automatically a good website? +
+        </button>
+
+        <div class="answer">
+          Not necessarily.
+          A useful website should also be clear,
+          functional and appropriate for
+          the audience it serves.
+        </div>
+
+      </div>
+
+
+      <div class="recall">
+
+        <button type="button">
+          What can you learn by comparing different student projects? +
+        </button>
+
+        <div class="answer">
+          You can see how the same tools
+          can be used for very different
+          ideas, audiences and digital experiences.
+        </div>
+
+      </div>
+
+
+      <div class="recall">
+
+        <button type="button">
+          What should you do when a project has a problem? +
+        </button>
+
+        <div class="answer">
+          Identify the specific issue,
+          describe it clearly,
+          improve the code or instruction,
+          test again and repeat.
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================
+     DAY 4 FINAL TAKEAWAY
+========================================= -->
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="takeaway">
+
+      <span class="kicker">
+        🦅 DAY 04 TAKEAWAY
+      </span>
+
+
+      <h2>
+        Creation becomes real
+        when somebody can open it.
+      </h2>
+
+
+      <p>
+        Day 4 is about seeing the difference
+        between an idea sitting in your head
+        and a digital creation existing
+        in the real world.
+
+        Watch the class.
+        Explore the projects.
+        Notice what works.
+        Then build something better.
+      </p>
+
+
+
+      <div class="takeaway-flow">
+
+
+        <div>
+
+          <strong>
+            WATCH
+          </strong>
+
+          <span>
+            Revisit the class
+          </span>
+
+        </div>
+
+
+        <strong>
+          →
+        </strong>
+
+
+        <div>
+
+          <strong>
+            OBSERVE
+          </strong>
+
+          <span>
+            Study real projects
+          </span>
+
+        </div>
+
+
+        <strong>
+          →
+        </strong>
+
+
+        <div>
+
+          <strong>
+            BUILD
+          </strong>
+
+          <span>
+            Create your own
+          </span>
+
+        </div>
+
+
+      </div>
+
+
+
+      <div class="next-row">
+
+
+        <a
+          href="class-3.html"
+          class="next"
+        >
+          ← Day 03
+        </a>
+
+
+        <a
+          href="index.html#journey"
+          class="next"
+        >
+          5-Day Journey
+        </a>
+
+
+        <button
+          type="button"
+          class="next"
+          id="nextClassBtn"
+        >
+          Continue to Day 05 →
+        </button>
+
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- =========================================
+     JAVASCRIPT
+========================================= -->
+
+<script>
+
+
+/* =========================================
+   QUICK RECALL
+========================================= */
+
+document
+.querySelectorAll(
+  ".recall button"
+)
+.forEach(
+  function(button){
+
+
+    button.addEventListener(
+      "click",
+      function(){
+
+
+        const card =
+          button.parentElement;
+
+
+        const wasOpen =
+          card.classList
+          .contains(
+            "open"
+          );
+
+
+        card.classList
+        .toggle(
+          "open"
+        );
+
+
+        const cleanText =
+          button
+          .textContent
+          .replace(
+            /[+−]\s*$/,
+            ""
+          )
+          .trim();
+
+
+        button.textContent =
+          cleanText
+          +
+          (
+            wasOpen
+            ? " +"
+            : " −"
+          );
+
+
+      }
+    );
+
+
+  }
+);
+
+
+
+/* =========================================
+   DAY 05 PLACEHOLDER
+========================================= */
+
+const nextClassBtn =
+  document.getElementById(
+    "nextClassBtn"
+  );
+
+
+if(nextClassBtn){
+
+  nextClassBtn.addEventListener(
+    "click",
+    function(){
+
+
+      const goBack =
+        confirm(
+          "Day 05 Digital Classroom will be connected after its final learning resources are added. Return to the 5-Day Journey for now?"
+        );
+
+
+      if(goBack){
+
+        window.location.href =
+          "index.html#journey";
+
+      }
+
+
+    }
+  );
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>
+
+<!-- ===== END CLASS-4 CHUNK 3 ===== -->
