@@ -1,0 +1,2764 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
+  <meta
+    name="theme-color"
+    content="#f5efe4"
+  >
+
+  <title>
+    Class 1 | Architectures of Intelligence
+  </title>
+
+
+  <style>
+
+    :root {
+
+      --cream: #f5efe4;
+      --paper: #fffaf2;
+
+      --navy: #163047;
+      --blue: #5f8196;
+
+      --rust: #bd6846;
+      --orange: #e85d24;
+      --gold: #d7a34a;
+
+      --text: #24313c;
+      --muted: #71808a;
+
+      --line: #ded5c7;
+
+      --dark: #0c1825;
+
+    }
+
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+
+    body {
+
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+      background:
+        var(--cream);
+
+      color:
+        var(--text);
+
+      line-height: 1.65;
+
+      overflow-x: hidden;
+
+    }
+
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+
+    button {
+      font: inherit;
+    }
+
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+
+    .container {
+
+      width:
+        min(
+          1080px,
+          calc(100% - 28px)
+        );
+
+      margin:
+        auto;
+
+    }
+
+
+    /* =========================================
+       HEADER
+    ========================================== */
+
+    header {
+
+      position: sticky;
+
+      top: 0;
+
+      z-index: 50;
+
+      background:
+        rgba(245,239,228,.94);
+
+      -webkit-backdrop-filter:
+        blur(14px);
+
+      backdrop-filter:
+        blur(14px);
+
+      border-bottom:
+        1px solid
+        var(--line);
+
+    }
+
+
+    .nav {
+
+      min-height: 68px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content:
+        space-between;
+
+      gap: 12px;
+
+    }
+
+
+    .brand {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 10px;
+
+    }
+
+
+    .brand img {
+
+      width: 42px;
+      height: 42px;
+
+      object-fit: contain;
+
+      border-radius: 12px;
+
+      background:
+        #ffffff;
+
+    }
+
+
+    .brand strong {
+
+      display: block;
+
+      color:
+        var(--navy);
+
+      font-size: 13px;
+
+    }
+
+
+    .brand span {
+
+      display: block;
+
+      color:
+        var(--muted);
+
+      font-size: 10px;
+
+    }
+
+
+    .back {
+
+      padding:
+        9px 12px;
+
+      border:
+        1px solid
+        var(--line);
+
+      border-radius: 10px;
+
+      background:
+        #ffffff;
+
+      font-size: 12px;
+
+      font-weight: 800;
+
+    }
+
+
+    /* =========================================
+       HERO
+    ========================================== */
+
+    .hero {
+
+      padding:
+        78px 0 58px;
+
+      background:
+
+        radial-gradient(
+          circle at 90% 15%,
+          rgba(95,129,150,.22),
+          transparent 28%
+        ),
+
+        radial-gradient(
+          circle at 10% 20%,
+          rgba(189,104,70,.18),
+          transparent 28%
+        ),
+
+        var(--cream);
+
+    }
+
+
+    .kicker {
+
+      display: inline-block;
+
+      padding:
+        7px 11px;
+
+      border-radius: 50px;
+
+      background:
+        rgba(232,93,36,.09);
+
+      color:
+        var(--orange);
+
+      font-size: 11px;
+
+      font-weight: 900;
+
+      letter-spacing: 1.3px;
+
+    }
+
+
+    .hero h1 {
+
+      max-width: 850px;
+
+      margin:
+        16px 0 18px;
+
+      font-size:
+        clamp(
+          44px,
+          9vw,
+          88px
+        );
+
+      color:
+        var(--navy);
+
+      line-height: .95;
+
+      letter-spacing: -4px;
+
+    }
+
+
+    .hero h1 span {
+
+      color:
+        var(--rust);
+
+    }
+
+
+    .hero p {
+
+      max-width: 720px;
+
+      color:
+        #596772;
+
+      font-size: 17px;
+
+    }
+
+
+    .hero-meta {
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 8px;
+
+      margin-top: 22px;
+
+    }
+
+
+    .meta {
+
+      padding:
+        8px 11px;
+
+      border:
+        1px solid
+        var(--line);
+
+      border-radius: 50px;
+
+      background:
+        rgba(255,255,255,.6);
+
+      font-size: 11px;
+
+      font-weight: 800;
+
+      color:
+        var(--navy);
+
+    }
+
+
+    /* =========================================
+       GENERAL SECTIONS
+    ========================================== */
+
+    .section {
+
+      padding:
+        68px 0;
+
+    }
+
+
+    .white {
+
+      background:
+        var(--paper);
+
+    }
+
+
+    .soft {
+
+      background:
+        #edf1ef;
+
+    }
+
+
+    .heading {
+
+      max-width: 760px;
+
+      margin-bottom: 28px;
+
+    }
+
+
+    .heading small {
+
+      color:
+        var(--rust);
+
+      font-weight: 900;
+
+      letter-spacing: 1px;
+
+    }
+
+
+    .heading h2 {
+
+      color:
+        var(--navy);
+
+      font-size:
+        clamp(
+          30px,
+          6vw,
+          52px
+        );
+
+      line-height: 1.05;
+
+      margin:
+        8px 0 10px;
+
+    }
+
+
+    .heading p {
+
+      color:
+        var(--muted);
+
+    }
+
+
+    /* =========================================
+       MEMORY REFRESH
+    ========================================== */
+
+    .memory-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(2,1fr);
+
+      gap: 13px;
+
+    }
+
+
+    .memory {
+
+      background:
+        #ffffff;
+
+      border:
+        1px solid
+        var(--line);
+
+      border-radius: 17px;
+
+      padding: 19px;
+
+    }
+
+
+    .memory b {
+
+      display: block;
+
+      color:
+        var(--navy);
+
+      margin-bottom: 5px;
+
+    }
+
+
+    .memory p {
+
+      font-size: 13px;
+
+      color:
+        var(--muted);
+
+    }
+
+
+    /* =========================================
+       CLASSROOM STORY
+    ========================================== */
+
+    .story {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(5,1fr);
+
+      gap: 8px;
+
+      align-items: stretch;
+
+    }
+
+
+    .story-card {
+
+      position: relative;
+
+      padding:
+        18px 12px;
+
+      border-radius: 16px;
+
+      background:
+        #ffffff;
+
+      border:
+        1px solid
+        var(--line);
+
+      text-align: center;
+
+    }
+
+
+    .story-card strong {
+
+      display: block;
+
+      color:
+        var(--navy);
+
+      font-size: 13px;
+
+    }
+
+
+    .story-card span {
+
+      display: block;
+
+      color:
+        var(--muted);
+
+      font-size: 11px;
+
+      margin-top: 5px;
+
+    }
+
+
+    .arrow {
+
+      text-align: center;
+
+      color:
+        var(--rust);
+
+      font-size: 22px;
+
+      align-self: center;
+
+    }
+
+
+    /* =========================================
+       HUMAN VS MACHINE
+    ========================================== */
+
+    .compare {
+
+      display: grid;
+
+      grid-template-columns:
+        1fr 1fr;
+
+      border-radius: 22px;
+
+      overflow: hidden;
+
+      border:
+        1px solid
+        var(--line);
+
+    }
+
+
+    .compare-side {
+
+      padding: 26px;
+
+    }
+
+
+    .compare-side:first-child {
+
+      background:
+        #f4ddd1;
+
+    }
+
+
+    .compare-side:last-child {
+
+      background:
+        #dbe8ef;
+
+    }
+
+
+    .compare-side h3 {
+
+      color:
+        var(--navy);
+
+      font-size: 24px;
+
+      margin-bottom: 14px;
+
+    }
+
+
+    .compare-row {
+
+      padding:
+        10px 0;
+
+      border-bottom:
+        1px solid
+        rgba(22,48,71,.12);
+
+    }
+
+
+    .compare-row:last-child {
+
+      border-bottom: 0;
+
+    }
+
+
+    .compare-row small {
+
+      display: block;
+
+      color:
+        var(--muted);
+
+      font-size: 10px;
+
+    }
+
+
+    .compare-row strong {
+
+      color:
+        var(--navy);
+
+    }
+
+
+    /* ===== END CLASS-1 CHUNK 1 ===== */
+    /* =========================================
+       TIMELINE
+    ========================================== */
+
+    .timeline {
+      display: grid;
+      gap: 11px;
+    }
+
+    .time {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 15px;
+
+      padding: 17px;
+
+      border-radius: 16px;
+
+      background: #ffffff;
+
+      border:
+        1px solid
+        var(--line);
+    }
+
+    .year {
+      color: var(--rust);
+      font-weight: 900;
+      font-size: 20px;
+    }
+
+    .time h3 {
+      color: var(--navy);
+      font-size: 18px;
+    }
+
+    .time p {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+
+    /* =========================================
+       GPT CARDS
+    ========================================== */
+
+    .gpt {
+      display: grid;
+
+      grid-template-columns:
+        repeat(3,1fr);
+
+      gap: 12px;
+    }
+
+    .gpt-card {
+      padding: 24px 17px;
+
+      border-radius: 18px;
+
+      background: #ffffff;
+
+      border:
+        1px solid
+        var(--line);
+    }
+
+    .letter {
+      width: 46px;
+      height: 46px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 13px;
+
+      background:
+        var(--navy);
+
+      color: #ffffff;
+
+      font-size: 24px;
+      font-weight: 900;
+
+      margin-bottom: 13px;
+    }
+
+    .gpt-card h3 {
+      color: var(--navy);
+    }
+
+    .gpt-card p {
+      color: var(--muted);
+
+      font-size: 13px;
+
+      margin-top: 6px;
+    }
+
+
+    /* =========================================
+       INDUSTRIAL REVOLUTION
+    ========================================== */
+
+    .steps {
+      display: grid;
+
+      grid-template-columns:
+        repeat(5,1fr);
+
+      gap: 7px;
+    }
+
+    .step {
+      min-height: 155px;
+
+      padding: 17px 12px;
+
+      border-radius: 15px;
+
+      background: #ffffff;
+
+      border:
+        1px solid
+        var(--line);
+    }
+
+    .step strong {
+      display: block;
+
+      color: var(--rust);
+
+      font-size: 12px;
+    }
+
+    .step h3 {
+      color: var(--navy);
+
+      font-size: 16px;
+
+      margin: 8px 0;
+    }
+
+    .step p {
+      color: var(--muted);
+
+      font-size: 11px;
+    }
+
+
+    /* =========================================
+       QUICK RECALL
+    ========================================== */
+
+    .recall-grid {
+      display: grid;
+      gap: 10px;
+    }
+
+    .recall {
+      overflow: hidden;
+
+      border:
+        1px solid
+        var(--line);
+
+      border-radius: 15px;
+
+      background: #ffffff;
+    }
+
+    .recall button {
+      width: 100%;
+
+      padding: 17px;
+
+      border: 0;
+
+      background: #ffffff;
+
+      text-align: left;
+
+      color: var(--navy);
+
+      font-weight: 900;
+
+      cursor: pointer;
+    }
+
+    .answer {
+      display: none;
+
+      padding:
+        0 17px 17px;
+
+      color: var(--muted);
+
+      font-size: 13px;
+    }
+
+    .recall.open .answer {
+      display: block;
+    }
+
+
+    /* =========================================
+       VIDEOS
+    ========================================== */
+
+    .video-grid {
+      display: grid;
+
+      grid-template-columns:
+        1fr 1fr;
+
+      gap: 18px;
+    }
+
+    .video-card {
+      background: #ffffff;
+
+      border:
+        1px solid
+        var(--line);
+
+      border-radius: 19px;
+
+      overflow: hidden;
+    }
+
+    .video-frame {
+      width: 100%;
+
+      aspect-ratio: 16 / 9;
+
+      background: #000000;
+    }
+
+    .video-frame iframe {
+      width: 100%;
+      height: 100%;
+
+      border: 0;
+
+      display: block;
+    }
+
+    .video-info {
+      padding: 17px;
+    }
+
+    .video-info small {
+      color: var(--rust);
+
+      font-weight: 900;
+    }
+
+    .video-info h3 {
+      color: var(--navy);
+
+      margin: 4px 0;
+    }
+
+    .video-info p {
+      color: var(--muted);
+
+      font-size: 12px;
+    }
+
+
+    /* =========================================
+       PDF / MATERIAL
+    ========================================== */
+
+    .material {
+      padding: 30px;
+
+      border-radius: 23px;
+
+      background:
+        var(--dark);
+
+      color: #ffffff;
+
+      display: grid;
+
+      grid-template-columns:
+        1fr auto;
+
+      gap: 20px;
+
+      align-items: center;
+    }
+
+    .material h2 {
+      line-height: 1.2;
+    }
+
+    .material p {
+      color: #a9b3bd;
+
+      font-size: 13px;
+
+      margin-top: 7px;
+    }
+
+    .pdf-btn {
+      display: inline-flex;
+
+      align-items: center;
+      justify-content: center;
+
+      min-height: 50px;
+
+      padding:
+        12px 18px;
+
+      border-radius: 13px;
+
+      background:
+        var(--orange);
+
+      color: #ffffff;
+
+      font-weight: 900;
+    }
+
+
+    /* =========================================
+       FINAL TAKEAWAY
+    ========================================== */
+
+    .takeaway {
+      padding:
+        42px 25px;
+
+      border-radius: 25px;
+
+      text-align: center;
+
+      background:
+
+        radial-gradient(
+          circle at top right,
+          rgba(232,93,36,.20),
+          transparent 35%
+        ),
+
+        var(--navy);
+
+      color: #ffffff;
+    }
+
+    .takeaway h2 {
+      font-size:
+        clamp(
+          32px,
+          7vw,
+          56px
+        );
+
+      line-height: 1.05;
+
+      margin-top: 14px;
+    }
+
+    .takeaway p {
+      max-width: 680px;
+
+      margin:
+        14px auto;
+
+      color: #b8c3cc;
+    }
+
+    .shift {
+      max-width: 600px;
+
+      margin:
+        24px auto 0;
+
+      display: grid;
+
+      grid-template-columns:
+        1fr auto 1fr;
+
+      gap: 12px;
+
+      align-items: center;
+    }
+
+    .shift div {
+      padding: 14px;
+
+      border-radius: 14px;
+
+      background:
+        rgba(255,255,255,.07);
+    }
+
+    .shift strong {
+      display: block;
+    }
+
+    .shift span {
+      font-size: 11px;
+
+      color: #b8c3cc;
+    }
+
+    .next-row {
+      display: flex;
+
+      justify-content: center;
+
+      flex-wrap: wrap;
+
+      gap: 10px;
+
+      margin-top: 22px;
+    }
+
+    .next {
+      padding:
+        13px 18px;
+
+      border-radius: 12px;
+
+      background: #ffffff;
+
+      color: var(--navy);
+
+      font-weight: 900;
+    }
+
+
+    /* =========================================
+       MOBILE RESPONSIVE
+    ========================================== */
+
+    @media (max-width: 760px) {
+
+      .hero {
+        padding:
+          54px 0 42px;
+      }
+
+      .hero h1 {
+        letter-spacing: -2px;
+      }
+
+      .memory-grid,
+      .video-grid,
+      .gpt {
+        grid-template-columns: 1fr;
+      }
+
+      .story {
+        grid-template-columns: 1fr;
+      }
+
+      .arrow {
+        transform:
+          rotate(90deg);
+      }
+
+      .steps {
+        grid-template-columns:
+          1fr 1fr;
+      }
+
+      .material {
+        grid-template-columns: 1fr;
+      }
+
+    }
+
+
+    @media (max-width: 520px) {
+
+      .section {
+        padding:
+          52px 0;
+      }
+
+      .compare {
+        grid-template-columns: 1fr;
+      }
+
+      .time {
+        grid-template-columns:
+          65px 1fr;
+      }
+
+      .steps {
+        grid-template-columns: 1fr;
+      }
+
+      .brand span {
+        display: none;
+      }
+
+      .material {
+        padding:
+          23px 18px;
+      }
+
+      .pdf-btn {
+        width: 100%;
+      }
+
+      .shift {
+        grid-template-columns: 1fr;
+      }
+
+    }
+
+
+  </style>
+
+</head>
+
+
+<!-- ===== END CLASS-1 CHUNK 2 ===== -->
+<!-- ===== START CLASS-1 CHUNK 3 ===== -->
+
+<body>
+
+
+<!-- =========================================
+     HEADER
+========================================== -->
+
+<header>
+
+  <div class="container nav">
+
+    <a
+      href="index.html"
+      class="brand"
+    >
+
+      <img
+        src="images/logo.jpg"
+        alt="Phoenix Logo"
+      >
+
+      <div>
+
+        <strong>
+          PHOENIX CLASSROOM
+        </strong>
+
+        <span>
+          AI Foundation Course • Day 01
+        </span>
+
+      </div>
+
+    </a>
+
+
+    <a
+      href="index.html#journey"
+      class="back"
+    >
+      ← Journey
+    </a>
+
+  </div>
+
+</header>
+
+
+
+<main>
+
+
+<!-- =========================================
+     HERO
+========================================== -->
+
+<section class="hero">
+
+  <div class="container">
+
+
+    <span class="kicker">
+      DAY 01 • DIGITAL CLASSROOM
+    </span>
+
+
+    <h1>
+
+      THE ARCHITECTURES<br>
+
+      <span>
+        OF INTELLIGENCE.
+      </span>
+
+    </h1>
+
+
+    <p>
+
+      From biological neural networks to silicon intelligence —
+      revisit the ideas, examples and turning points that shaped
+      our first classroom journey.
+
+    </p>
+
+
+    <div class="hero-meta">
+
+      <span class="meta">
+        🧠 Natural Intelligence
+      </span>
+
+      <span class="meta">
+        🤖 Artificial Intelligence
+      </span>
+
+      <span class="meta">
+        ⚡ Transformer Era
+      </span>
+
+      <span class="meta">
+        🔥 Fifth Industrial Revolution
+      </span>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================
+     MEMORY REFRESH
+========================================== -->
+
+<section class="section white">
+
+  <div class="container">
+
+
+    <div class="heading">
+
+      <small>
+        🧠 MEMORY REFRESH
+      </small>
+
+
+      <h2>
+        Remember what started the discussion?
+      </h2>
+
+
+      <p>
+        These were the ideas that built the foundation of Day 1.
+      </p>
+
+    </div>
+
+
+
+    <div class="memory-grid">
+
+
+      <div class="memory">
+
+        <b>
+          Intelligence changes capability.
+        </b>
+
+        <p>
+          The class began by connecting intelligence with the
+          range of behaviours an entity can perform.
+        </p>
+
+      </div>
+
+
+
+      <div class="memory">
+
+        <b>
+          Connections matter.
+        </b>
+
+        <p>
+          Biological intelligence was presented as a network problem,
+          not simply a question of how many components exist.
+        </p>
+
+      </div>
+
+
+
+      <div class="memory">
+
+        <b>
+          Carbon and silicon learn differently.
+        </b>
+
+        <p>
+          Humans rely on biological neural structures and chemical
+          energy; machines rely on silicon, networks and electricity.
+        </p>
+
+      </div>
+
+
+
+      <div class="memory">
+
+        <b>
+          The interface changed.
+        </b>
+
+        <p>
+          Modern AI moved computing from rigid instructions toward
+          interaction through natural human language.
+        </p>
+
+      </div>
+
+
+
+      <div class="memory">
+
+        <b>
+          Your digital footprint became data.
+        </b>
+
+        <p>
+          Search, writing and online activity help create the enormous
+          information environment from which modern models learn.
+        </p>
+
+      </div>
+
+
+
+      <div class="memory">
+
+        <b>
+          Better questions became a skill.
+        </b>
+
+        <p>
+          Day 1 ends by framing Prompt Engineering as the ability
+          to communicate effectively with silicon intelligence.
+        </p>
+
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+<!-- ===== END CLASS-1 CHUNK 3 ===== -->
+<!-- ===== START CLASS-1 CHUNK 4 ===== -->
+
+
+<!-- =========================================
+     CLASSROOM EXAMPLE
+========================================== -->
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="heading">
+
+      <small>
+        💡 REMEMBER THIS EXAMPLE?
+      </small>
+
+      <h2>
+        The era of localized limits is over.
+      </h2>
+
+      <p>
+        One classroom example connected a student in Kishangarh
+        with work beyond geographical boundaries.
+      </p>
+
+    </div>
+
+
+    <div class="story">
+
+      <div class="story-card">
+
+        <strong>
+          SRKP Govt College
+        </strong>
+
+        <span>
+          Kishangarh
+        </span>
+
+      </div>
+
+
+      <div class="arrow">
+        →
+      </div>
+
+
+      <div class="story-card">
+
+        <strong>
+          AI Help Desk
+        </strong>
+
+        <span>
+          The catalyst
+        </span>
+
+      </div>
+
+
+      <div class="arrow">
+        →
+      </div>
+
+
+      <div class="story-card">
+
+        <strong>
+          Student Builder
+        </strong>
+
+        <span>
+          AI-assisted digital work
+        </span>
+
+      </div>
+
+    </div>
+
+
+
+    <div
+      class="story"
+      style="margin-top:8px"
+    >
+
+      <div class="story-card">
+
+        <strong>
+          Digital Delivery
+        </strong>
+
+        <span>
+          Information + AI tools
+        </span>
+
+      </div>
+
+
+      <div class="arrow">
+        →
+      </div>
+
+
+      <div class="story-card">
+
+        <strong>
+          Global Reach
+        </strong>
+
+        <span>
+          Geography collapses
+        </span>
+
+      </div>
+
+
+      <div class="arrow">
+        →
+      </div>
+
+
+      <div class="story-card">
+
+        <strong>
+          United Kingdom
+        </strong>
+
+        <span>
+          Work crosses borders
+        </span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================
+     CARBON VS SILICON
+========================================== -->
+
+<section class="section soft">
+
+  <div class="container">
+
+    <div class="heading">
+
+      <small>
+        🧬 TWO ARCHITECTURES
+      </small>
+
+      <h2>
+        Carbon intelligence vs Silicon intelligence.
+      </h2>
+
+      <p>
+        The class compared the biological and artificial
+        foundations of intelligence.
+      </p>
+
+    </div>
+
+
+
+    <div class="compare">
+
+
+      <!-- NATURAL INTELLIGENCE -->
+
+      <div class="compare-side">
+
+        <h3>
+          🧠 Natural Intelligence
+        </h3>
+
+
+        <div class="compare-row">
+
+          <small>
+            BASE ELEMENT
+          </small>
+
+          <strong>
+            Carbon
+          </strong>
+
+        </div>
+
+
+        <div class="compare-row">
+
+          <small>
+            STRUCTURE
+          </small>
+
+          <strong>
+            Neurons + Synapses
+          </strong>
+
+        </div>
+
+
+        <div class="compare-row">
+
+          <small>
+            ENERGY
+          </small>
+
+          <strong>
+            Chemical processes / food
+          </strong>
+
+        </div>
+
+
+        <div class="compare-row">
+
+          <small>
+            BIOLOGICAL LIMIT
+          </small>
+
+          <strong>
+            Sleep, fatigue and biological lifespan
+          </strong>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- ARTIFICIAL INTELLIGENCE -->
+
+      <div class="compare-side">
+
+        <h3>
+          🤖 Artificial Intelligence
+        </h3>
+
+
+        <div class="compare-row">
+
+          <small>
+            BASE ELEMENT
+          </small>
+
+          <strong>
+            Silicon
+          </strong>
+
+        </div>
+
+
+        <div class="compare-row">
+
+          <small>
+            STRUCTURE
+          </small>
+
+          <strong>
+            Artificial Neural Networks
+          </strong>
+
+        </div>
+
+
+        <div class="compare-row">
+
+          <small>
+            ENERGY
+          </small>
+
+          <strong>
+            Electrical power
+          </strong>
+
+        </div>
+
+
+        <div class="compare-row">
+
+          <small>
+            COMPUTATIONAL ADVANTAGE
+          </small>
+
+          <strong>
+            Continuous large-scale computation
+          </strong>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================
+     AI TIMELINE
+========================================== -->
+
+<section class="section white">
+
+  <div class="container">
+
+    <div class="heading">
+
+      <small>
+        ⚡ THE SILICON MIND
+      </small>
+
+      <h2>
+        How did we reach modern AI?
+      </h2>
+
+      <p>
+        Day 1 travelled through major milestones before
+        arriving at Generative AI.
+      </p>
+
+    </div>
+
+
+
+    <div class="timeline">
+
+
+      <!-- 1950 -->
+
+      <div class="time">
+
+        <div class="year">
+          1950
+        </div>
+
+        <div>
+
+          <h3>
+            Alan Turing
+          </h3>
+
+          <p>
+            The class explored the question of whether
+            machine behaviour could become indistinguishable
+            from human behaviour.
+          </p>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- 1956 -->
+
+      <div class="time">
+
+        <div class="year">
+          1956
+        </div>
+
+        <div>
+
+          <h3>
+            Dartmouth & John McCarthy
+          </h3>
+
+          <p>
+            The classroom journey connected this period
+            with the formal emergence of the term
+            Artificial Intelligence.
+          </p>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- 1997 -->
+
+      <div class="time">
+
+        <div class="year">
+          1997
+        </div>
+
+        <div>
+
+          <h3>
+            Deep Blue
+          </h3>
+
+          <p>
+            A landmark example of machine computation:
+            IBM's Deep Blue defeated world chess champion
+            Garry Kasparov.
+          </p>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- 2016 -->
+
+      <div class="time">
+
+        <div class="year">
+          2016
+        </div>
+
+        <div>
+
+          <h3>
+            AlphaGo
+          </h3>
+
+          <p>
+            Another major milestone arrived when AlphaGo
+            defeated Lee Sedol in the complex game of Go.
+          </p>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- 2017 -->
+
+      <div class="time">
+
+        <div class="year">
+          2017
+        </div>
+
+        <div>
+
+          <h3>
+            The Transformer Era
+          </h3>
+
+          <p>
+            Transformer architecture marked a major shift
+            toward machines working more effectively with
+            natural human language and context.
+          </p>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================
+     GPT
+========================================== -->
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="heading">
+
+      <small>
+        🤖 DECODING MODERN AI
+      </small>
+
+      <h2>
+        What does GPT actually mean?
+      </h2>
+
+      <p>
+        Three letters that helped us understand the
+        architecture behind modern Generative AI.
+      </p>
+
+    </div>
+
+
+
+    <div class="gpt">
+
+
+      <!-- G -->
+
+      <div class="gpt-card">
+
+        <div class="letter">
+          G
+        </div>
+
+        <h3>
+          Generative
+        </h3>
+
+        <p>
+          The output engine — creating new text,
+          images and solutions.
+        </p>
+
+      </div>
+
+
+
+      <!-- P -->
+
+      <div class="gpt-card">
+
+        <div class="letter">
+          P
+        </div>
+
+        <h3>
+          Pre-trained
+        </h3>
+
+        <p>
+          The knowledge base — trained extensively
+          on large collections of human-created data
+          before interaction.
+        </p>
+
+      </div>
+
+
+
+      <!-- T -->
+
+      <div class="gpt-card">
+
+        <div class="letter">
+          T
+        </div>
+
+        <h3>
+          Transformer
+        </h3>
+
+        <p>
+          The comprehension architecture — working
+          with context and relationships within language.
+        </p>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ===== END CLASS-1 CHUNK 4 ===== -->
+<!-- ===== START CLASS-1 CHUNK 5 ===== -->
+
+
+<!-- =========================================
+     DIGITAL FOOTPRINT
+========================================== -->
+
+<section class="section soft">
+
+  <div class="container">
+
+    <div class="heading">
+
+      <small>
+        🌐 YOUR DIGITAL FOOTPRINT
+      </small>
+
+      <h2>
+        The internet became part of the curriculum.
+      </h2>
+
+      <p>
+        Search queries, messages, published writing and
+        other digital activity contribute to the enormous
+        information environment connected with modern AI.
+      </p>
+
+    </div>
+
+
+    <div class="material">
+
+      <div>
+
+        <h2>
+          Raw Activity → Information & Context → AI Training
+        </h2>
+
+        <p>
+          One of Day 1's key ideas was that the internet
+          is not merely where AI is used. It also forms
+          part of the information landscape from which
+          modern AI systems are developed.
+        </p>
+
+      </div>
+
+
+      <div
+        style="
+          font-size:45px;
+          text-align:center;
+        "
+      >
+        🌐 → 🧠
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================
+     INDUSTRIAL REVOLUTIONS
+========================================== -->
+
+<section class="section white">
+
+  <div class="container">
+
+    <div class="heading">
+
+      <small>
+        🔥 THE BIG PICTURE
+      </small>
+
+      <h2>
+        The Fifth Industrial Revolution.
+      </h2>
+
+      <p>
+        The class connected today's AI transformation
+        with the technological revolutions that came
+        before it.
+      </p>
+
+    </div>
+
+
+    <div class="steps">
+
+
+      <div class="step">
+
+        <strong>
+          1ST REVOLUTION
+        </strong>
+
+        <h3>
+          Steam
+        </h3>
+
+        <p>
+          Reduced dependence on physical muscle.
+        </p>
+
+      </div>
+
+
+      <div class="step">
+
+        <strong>
+          2ND REVOLUTION
+        </strong>
+
+        <h3>
+          Electricity
+        </h3>
+
+        <p>
+          Enabled continuous operation beyond sundown.
+        </p>
+
+      </div>
+
+
+      <div class="step">
+
+        <strong>
+          3RD REVOLUTION
+        </strong>
+
+        <h3>
+          Computers
+        </h3>
+
+        <p>
+          Accelerated mathematical calculation.
+        </p>
+
+      </div>
+
+
+      <div class="step">
+
+        <strong>
+          4TH REVOLUTION
+        </strong>
+
+        <h3>
+          Internet
+        </h3>
+
+        <p>
+          Reduced geographical barriers to information.
+        </p>
+
+      </div>
+
+
+      <div class="step">
+
+        <strong>
+          5TH REVOLUTION
+        </strong>
+
+        <h3>
+          AI / GPT
+        </h3>
+
+        <p>
+          Automates cognitive processing and
+          creative generation.
+        </p>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================
+     QUICK RECALL
+========================================== -->
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="heading">
+
+      <small>
+        🤔 QUICK RECALL
+      </small>
+
+      <h2>
+        Do you still remember?
+      </h2>
+
+      <p>
+        Tap each question to reveal the answer.
+        No marks. Just test your memory. 😄
+      </p>
+
+    </div>
+
+
+    <div class="recall-grid">
+
+
+      <!-- QUESTION 1 -->
+
+      <div class="recall">
+
+        <button type="button">
+          What does GPT stand for? +
+        </button>
+
+        <div class="answer">
+          <strong>
+            Generative • Pre-trained • Transformer
+          </strong>
+        </div>
+
+      </div>
+
+
+
+      <!-- QUESTION 2 -->
+
+      <div class="recall">
+
+        <button type="button">
+          Why was 2017 important in our classroom journey? +
+        </button>
+
+        <div class="answer">
+          The Transformer architecture marked a major
+          turning point toward modern language-oriented
+          Generative AI.
+        </div>
+
+      </div>
+
+
+
+      <!-- QUESTION 3 -->
+
+      <div class="recall">
+
+        <button type="button">
+          Carbon vs Silicon — what was the basic distinction? +
+        </button>
+
+        <div class="answer">
+          Biological intelligence was presented through
+          carbon-based neural systems, while artificial
+          intelligence operates through silicon-based
+          computational systems.
+        </div>
+
+      </div>
+
+
+
+      <!-- QUESTION 4 -->
+
+      <div class="recall">
+
+        <button type="button">
+          What happened in the Deep Blue example? +
+        </button>
+
+        <div class="answer">
+          IBM's Deep Blue defeated world chess champion
+          Garry Kasparov in 1997.
+        </div>
+
+      </div>
+
+
+
+      <!-- QUESTION 5 -->
+
+      <div class="recall">
+
+        <button type="button">
+          What happened in the AlphaGo example? +
+        </button>
+
+        <div class="answer">
+          AlphaGo defeated Lee Sedol in the game of Go,
+          becoming another important milestone in the
+          development of machine intelligence.
+        </div>
+
+      </div>
+
+
+
+      <!-- QUESTION 6 -->
+
+      <div class="recall">
+
+        <button type="button">
+          What skill did Day 1 ultimately point toward? +
+        </button>
+
+        <div class="answer">
+          <strong>
+            Prompt Engineering.
+          </strong>
+
+          The focus shifts from simply remembering
+          answers to learning how to ask intelligent,
+          precise and useful questions.
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================
+     DAY 1 VIDEO CLASSROOM
+========================================== -->
+
+<section class="section soft">
+
+  <div class="container">
+
+    <div class="heading">
+
+      <small>
+        🎥 REVISIT THE CLASS
+      </small>
+
+      <h2>
+        Watch. Remember. Connect the dots.
+      </h2>
+
+      <p>
+        Reading can refresh the concepts.
+        Watching can bring the classroom experience back.
+      </p>
+
+    </div>
+
+
+
+    <div class="video-grid">
+
+
+      <!-- SUPPORTING VIDEO -->
+
+      <article class="video-card">
+
+        <div class="video-frame">
+
+          <iframe
+            src="https://www.youtube.com/embed/4bQ-CmtxGq0"
+            title="Day 1 Supporting Classroom Video"
+            loading="lazy"
+            allow="
+              accelerometer;
+              autoplay;
+              clipboard-write;
+              encrypted-media;
+              gyroscope;
+              picture-in-picture;
+              web-share
+            "
+            allowfullscreen>
+          </iframe>
+
+        </div>
+
+
+        <div class="video-info">
+
+          <small>
+            🎬 CLASSROOM RESOURCE
+          </small>
+
+          <h3>
+            Supporting Video
+          </h3>
+
+          <p>
+            Revisit the supporting video connected
+            with your Day 1 learning experience.
+          </p>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- FULL ONLINE CLASS -->
+
+      <article class="video-card">
+
+        <div class="video-frame">
+
+          <iframe
+            src="https://www.youtube.com/embed/GPIKtTnCHcI"
+            title="Day 1 Full Online Class"
+            loading="lazy"
+            allow="
+              accelerometer;
+              autoplay;
+              clipboard-write;
+              encrypted-media;
+              gyroscope;
+              picture-in-picture;
+              web-share
+            "
+            allowfullscreen>
+          </iframe>
+
+        </div>
+
+
+        <div class="video-info">
+
+          <small>
+            ▶ FULL ONLINE CLASS
+          </small>
+
+          <h3>
+            Watch the Class Again
+          </h3>
+
+          <p>
+            Missed something? Revisit the complete
+            Day 1 session and experience the class again.
+          </p>
+
+        </div>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ===== END CLASS-1 CHUNK 5 ===== -->
+<!-- ===== START CLASS-1 CHUNK 6 ===== -->
+
+
+<!-- =========================================
+     ORIGINAL CLASS PDF
+========================================== -->
+
+<section class="section white">
+
+  <div class="container">
+
+    <div class="heading">
+
+      <small>
+        📄 ORIGINAL CLASS MATERIAL
+      </small>
+
+      <h2>
+        Want to revisit the slides?
+      </h2>
+
+      <p>
+        Open the original Day 1 classroom material
+        whenever you want to study the concepts again.
+      </p>
+
+    </div>
+
+
+    <div class="material">
+
+      <div>
+
+        <h2>
+          📘 Architectures of Intelligence
+        </h2>
+
+        <p>
+          Original Day 1 classroom PDF.
+          Open it directly from the Phoenix Classroom.
+        </p>
+
+      </div>
+
+
+      <a
+        class="pdf-btn"
+        href="materials/Architectures%20of%20Intelligence%20(2).pdf"
+        target="_blank"
+        rel="noopener"
+      >
+        OPEN CLASS PDF →
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================
+     DAY 1 FINAL TAKEAWAY
+========================================== -->
+
+<section class="section">
+
+  <div class="container">
+
+
+    <div class="takeaway">
+
+
+      <span class="kicker">
+        🦅 DAY 01 TAKEAWAY
+      </span>
+
+
+      <h2>
+        The future belongs to those
+        who ask the right questions.
+      </h2>
+
+
+      <p>
+        Day 1 did not end with simply defining
+        Artificial Intelligence.
+
+        It moved from understanding intelligence
+        itself to understanding how humans can
+        communicate with intelligent machines
+        and use them to create useful outcomes.
+      </p>
+
+
+
+      <div class="shift">
+
+
+        <div>
+
+          <strong>
+            OLD MODEL
+          </strong>
+
+          <span>
+            Retain the answer
+          </span>
+
+        </div>
+
+
+        <strong>
+          →
+        </strong>
+
+
+        <div>
+
+          <strong>
+            NEW MODEL
+          </strong>
+
+          <span>
+            Ask the right question
+          </span>
+
+        </div>
+
+
+      </div>
+
+
+
+      <div class="next-row">
+
+
+        <a
+          href="index.html#journey"
+          class="next"
+        >
+          ← 5-Day Journey
+        </a>
+
+
+        <button
+          type="button"
+          class="next"
+          id="nextClassBtn"
+          style="
+            border:0;
+            cursor:pointer;
+          "
+        >
+          Continue to Day 02 →
+        </button>
+
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- =========================================
+     JAVASCRIPT
+========================================== -->
+
+<script>
+
+
+  /* =========================================
+     QUICK RECALL
+  ========================================== */
+
+  document
+  .querySelectorAll(
+    ".recall button"
+  )
+  .forEach(
+    function(button){
+
+
+      button.addEventListener(
+        "click",
+        function(){
+
+
+          const card =
+            button.parentElement;
+
+
+          const isOpen =
+            card.classList
+            .contains(
+              "open"
+            );
+
+
+          card.classList
+          .toggle(
+            "open"
+          );
+
+
+          const cleanText =
+            button
+            .textContent
+            .replace(
+              /[+−]\s*$/,
+              ""
+            )
+            .trim();
+
+
+          button.textContent =
+            cleanText +
+            (
+              isOpen
+              ? " +"
+              : " −"
+            );
+
+
+        }
+      );
+
+
+    }
+  );
+
+
+
+  /* =========================================
+     DAY 02 BUTTON
+
+     Day 2 classroom is not connected yet.
+     Once class-2.html is created,
+     this button can directly open it.
+  ========================================== */
+
+  const nextClassBtn =
+    document.getElementById(
+      "nextClassBtn"
+    );
+
+
+  nextClassBtn.addEventListener(
+    "click",
+    function(){
+
+
+      const continueJourney =
+        confirm(
+          "Day 02 Digital Classroom will be added with its original learning materials. Return to the 5-Day Journey for now?"
+        );
+
+
+      if(
+        continueJourney
+      ){
+
+        window.location.href =
+          "index.html#journey";
+
+      }
+
+
+    }
+  );
+
+
+</script>
+
+
+
+</body>
+
+</html>
+
+<!-- ===== END CLASS-1 CHUNK 6 ===== -->
