@@ -1,0 +1,2301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0"
+>
+
+<meta
+  name="theme-color"
+  content="#f6f1e8"
+>
+
+<title>
+  Class 5 | AI Career Blueprint
+</title>
+
+<style>
+
+:root{
+  --cream:#f6f1e8;
+  --paper:#fffdf8;
+  --navy:#132d46;
+  --blue:#5b7f9f;
+  --orange:#e8662e;
+  --green:#2f946b;
+  --gold:#d8a54b;
+  --text:#26333d;
+  --muted:#71808a;
+  --line:#ddd6ca;
+  --dark:#081522;
+}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:var(--cream);
+  color:var(--text);
+  line-height:1.65;
+  overflow-x:hidden;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+button{
+  font:inherit;
+}
+
+img{
+  display:block;
+  max-width:100%;
+}
+
+.container{
+  width:min(1100px,calc(100% - 28px));
+  margin:auto;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+  position:sticky;
+  top:0;
+  z-index:100;
+
+  background:
+    rgba(246,241,232,.94);
+
+  -webkit-backdrop-filter:blur(14px);
+  backdrop-filter:blur(14px);
+
+  border-bottom:
+    1px solid var(--line);
+}
+
+.nav{
+  min-height:68px;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  gap:12px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.brand img{
+  width:42px;
+  height:42px;
+
+  object-fit:contain;
+
+  border-radius:12px;
+  background:#fff;
+}
+
+.brand strong{
+  display:block;
+  color:var(--navy);
+  font-size:13px;
+}
+
+.brand span{
+  display:block;
+  color:var(--muted);
+  font-size:10px;
+}
+
+.back{
+  padding:9px 12px;
+
+  border:
+    1px solid var(--line);
+
+  border-radius:10px;
+
+  background:#fff;
+
+  font-size:12px;
+  font-weight:800;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+  position:relative;
+  overflow:hidden;
+
+  padding:
+    82px 0 64px;
+
+  background:
+
+    radial-gradient(
+      circle at 88% 15%,
+      rgba(216,165,75,.20),
+      transparent 30%
+    ),
+
+    radial-gradient(
+      circle at 8% 85%,
+      rgba(47,148,107,.16),
+      transparent 32%
+    ),
+
+    var(--cream);
+}
+
+.hero::after{
+  content:"NEXT";
+
+  position:absolute;
+
+  right:-10px;
+  bottom:-55px;
+
+  color:
+    rgba(19,45,70,.045);
+
+  font-size:
+    clamp(110px,22vw,240px);
+
+  font-weight:900;
+
+  pointer-events:none;
+}
+
+.kicker{
+  position:relative;
+  z-index:2;
+
+  display:inline-block;
+
+  padding:7px 11px;
+
+  border-radius:50px;
+
+  background:
+    rgba(216,165,75,.13);
+
+  color:#a67421;
+
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:1.3px;
+}
+
+.hero h1{
+  position:relative;
+  z-index:2;
+
+  max-width:900px;
+
+  margin:
+    17px 0 19px;
+
+  color:
+    var(--navy);
+
+  font-size:
+    clamp(44px,9vw,90px);
+
+  line-height:.95;
+
+  letter-spacing:-4px;
+}
+
+.hero h1 span{
+  color:
+    var(--green);
+}
+
+.hero p{
+  position:relative;
+  z-index:2;
+
+  max-width:750px;
+
+  color:#596772;
+
+  font-size:17px;
+}
+
+.hero-meta{
+  position:relative;
+  z-index:2;
+
+  display:flex;
+  flex-wrap:wrap;
+
+  gap:8px;
+
+  margin-top:23px;
+}
+
+.meta{
+  padding:
+    8px 11px;
+
+  border:
+    1px solid var(--line);
+
+  border-radius:50px;
+
+  background:
+    rgba(255,255,255,.68);
+
+  color:
+    var(--navy);
+
+  font-size:11px;
+  font-weight:800;
+}
+
+
+/* =========================
+   GENERAL
+========================= */
+
+.section{
+  padding:
+    68px 0;
+}
+
+.white{
+  background:
+    var(--paper);
+}
+
+.soft{
+  background:
+    #edf1ef;
+}
+
+.dark-section{
+  background:
+    var(--dark);
+
+  color:#fff;
+}
+
+.heading{
+  max-width:790px;
+
+  margin-bottom:30px;
+}
+
+.heading small{
+  color:
+    var(--green);
+
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:1px;
+}
+
+.heading h2{
+  color:
+    var(--navy);
+
+  font-size:
+    clamp(30px,6vw,52px);
+
+  line-height:1.05;
+
+  margin:
+    8px 0 10px;
+}
+
+.dark-section
+.heading h2{
+  color:#fff;
+}
+
+.heading p{
+  color:
+    var(--muted);
+}
+
+.dark-section
+.heading p{
+  color:#aab6c1;
+}
+
+
+/* =========================
+   FIVE-DAY SHIFT
+========================= */
+
+.final-shift{
+  display:grid;
+
+  grid-template-columns:
+    repeat(5,1fr);
+
+  gap:9px;
+}
+
+.shift-card{
+  padding:18px;
+
+  border-radius:17px;
+
+  background:#fff;
+
+  border:
+    1px solid var(--line);
+}
+
+.shift-card small{
+  display:block;
+
+  color:
+    var(--orange);
+
+  font-size:10px;
+  font-weight:900;
+}
+
+.shift-card h3{
+  color:
+    var(--navy);
+
+  margin:
+    7px 0;
+
+  font-size:17px;
+}
+
+.shift-card p{
+  color:
+    var(--muted);
+
+  font-size:11px;
+}
+
+
+/* =========================
+   CAREER PATHS
+========================= */
+
+.path-grid{
+  display:grid;
+
+  grid-template-columns:
+    repeat(3,1fr);
+
+  gap:12px;
+}
+
+.path-card{
+  padding:22px;
+
+  border-radius:19px;
+
+  border:
+    1px solid var(--line);
+
+  background:#fff;
+}
+
+.path-icon{
+  font-size:30px;
+
+  margin-bottom:9px;
+}
+
+.path-card h3{
+  color:
+    var(--navy);
+
+  font-size:18px;
+}
+
+.path-card p{
+  color:
+    var(--muted);
+
+  font-size:12px;
+
+  margin-top:6px;
+}
+
+
+/* =========================
+   CERTIFICATE IDEA
+========================= */
+
+.cert-grid{
+  display:grid;
+
+  grid-template-columns:
+    1fr auto 1fr auto 1fr;
+
+  gap:10px;
+
+  align-items:center;
+}
+
+.cert-box{
+  padding:22px;
+
+  border-radius:18px;
+
+  background:#fff;
+
+  border:
+    1px solid var(--line);
+
+  text-align:center;
+}
+
+.cert-box span{
+  font-size:30px;
+}
+
+.cert-box h3{
+  color:
+    var(--navy);
+
+  margin-top:7px;
+}
+
+.cert-box p{
+  color:
+    var(--muted);
+
+  font-size:11px;
+
+  margin-top:5px;
+}
+
+.cert-plus{
+  color:
+    var(--orange);
+
+  font-size:28px;
+
+  font-weight:900;
+}
+
+
+/* =========================
+   LEARNING PLATFORMS
+========================= */
+
+.platform-grid{
+  display:grid;
+
+  grid-template-columns:
+    repeat(2,1fr);
+
+  gap:13px;
+}
+
+.platform-card{
+  display:flex;
+
+  flex-direction:column;
+
+  justify-content:
+    space-between;
+
+  min-height:250px;
+
+  padding:22px;
+
+  border-radius:20px;
+
+  background:#fff;
+
+  border:
+    1px solid var(--line);
+
+  transition:
+    transform .2s ease,
+    box-shadow .2s ease;
+}
+
+.platform-card:hover{
+  transform:
+    translateY(-4px);
+
+  box-shadow:
+    0 18px 45px
+    rgba(19,45,70,.08);
+}
+
+.platform-top{
+  display:flex;
+
+  align-items:flex-start;
+
+  justify-content:
+    space-between;
+
+  gap:10px;
+}
+
+.platform-icon{
+  width:48px;
+  height:48px;
+
+  display:grid;
+
+  place-items:center;
+
+  border-radius:14px;
+
+  background:
+    var(--navy);
+
+  color:#fff;
+
+  font-size:21px;
+  font-weight:900;
+}
+
+.platform-tag{
+  padding:
+    5px 8px;
+
+  border-radius:50px;
+
+  background:
+    rgba(47,148,107,.10);
+
+  color:
+    var(--green);
+
+  font-size:9px;
+  font-weight:900;
+}
+
+.platform-card h3{
+  color:
+    var(--navy);
+
+  font-size:21px;
+
+  margin:
+    15px 0 5px;
+}
+
+.platform-card p{
+  color:
+    var(--muted);
+
+  font-size:12px;
+}
+
+.platform-best{
+  margin-top:12px;
+
+  padding:10px;
+
+  border-radius:11px;
+
+  background:
+    #f4f3ee;
+
+  font-size:11px;
+}
+
+.platform-best strong{
+  color:
+    var(--navy);
+}
+
+.platform-btn{
+  display:inline-flex;
+
+  align-items:center;
+  justify-content:center;
+
+  min-height:46px;
+
+  margin-top:17px;
+
+  padding:
+    11px 14px;
+
+  border-radius:12px;
+
+  background:
+    var(--navy);
+
+  color:#fff;
+
+  font-size:12px;
+  font-weight:900;
+}
+
+
+/* =========================
+   VIDEOS
+========================= */
+
+.video-grid{
+  display:grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap:18px;
+}
+
+.video-card{
+  overflow:hidden;
+
+  border-radius:19px;
+
+  border:
+    1px solid var(--line);
+
+  background:#fff;
+}
+
+.video-frame{
+  width:100%;
+
+  aspect-ratio:
+    16 / 9;
+
+  background:#000;
+}
+
+.video-frame iframe{
+  width:100%;
+  height:100%;
+
+  display:block;
+
+  border:0;
+}
+
+.video-info{
+  padding:17px;
+}
+
+.video-info small{
+  color:
+    var(--green);
+
+  font-weight:900;
+}
+
+.video-info h3{
+  color:
+    var(--navy);
+
+  margin:
+    4px 0;
+}
+
+.video-info p{
+  color:
+    var(--muted);
+
+  font-size:12px;
+}
+
+
+/* =========================
+   MATERIAL
+========================= */
+
+.material{
+  display:grid;
+
+  grid-template-columns:
+    1fr auto;
+
+  gap:20px;
+
+  align-items:center;
+
+  padding:30px;
+
+  border-radius:23px;
+
+  background:
+    var(--dark);
+
+  color:#fff;
+}
+
+.material p{
+  color:#a9b3bd;
+
+  font-size:13px;
+
+  margin-top:7px;
+}
+
+.material-btn{
+  display:inline-flex;
+
+  align-items:center;
+  justify-content:center;
+
+  min-height:50px;
+
+  padding:
+    12px 18px;
+
+  border-radius:13px;
+
+  background:
+    var(--green);
+
+  color:#fff;
+
+  font-weight:900;
+}
+
+
+/* =========================
+   FINAL CTA
+========================= */
+
+.takeaway{
+  padding:
+    42px 25px;
+
+  border-radius:25px;
+
+  text-align:center;
+
+  background:
+
+    radial-gradient(
+      circle at top right,
+      rgba(47,148,107,.23),
+      transparent 35%
+    ),
+
+    var(--navy);
+
+  color:#fff;
+}
+
+.takeaway h2{
+  margin-top:14px;
+
+  font-size:
+    clamp(32px,7vw,56px);
+
+  line-height:1.05;
+}
+
+.takeaway p{
+  max-width:720px;
+
+  margin:
+    14px auto;
+
+  color:#b8c3cc;
+}
+
+.next-row{
+  display:flex;
+
+  justify-content:center;
+
+  flex-wrap:wrap;
+
+  gap:10px;
+
+  margin-top:23px;
+}
+
+.next{
+  padding:
+    13px 18px;
+
+  border-radius:12px;
+
+  border:0;
+
+  background:#fff;
+
+  color:
+    var(--navy);
+
+  font-weight:900;
+
+  cursor:pointer;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:760px){
+
+  .hero{
+    padding:
+      55px 0 44px;
+  }
+
+  .hero h1{
+    letter-spacing:-2px;
+  }
+
+  .final-shift,
+  .path-grid,
+  .platform-grid,
+  .video-grid{
+    grid-template-columns:1fr;
+  }
+
+  .cert-grid{
+    grid-template-columns:1fr;
+  }
+
+  .cert-plus{
+    transform:
+      rotate(90deg);
+
+    text-align:center;
+  }
+
+  .material{
+    grid-template-columns:1fr;
+  }
+
+  .material-btn{
+    width:100%;
+  }
+
+}
+
+
+@media(max-width:520px){
+
+  .section{
+    padding:
+      52px 0;
+  }
+
+  .brand span{
+    display:none;
+  }
+
+  .material{
+    padding:
+      23px 18px;
+  }
+
+}
+
+</style>
+
+</head>
+
+<!-- ===== END CLASS-5 CHUNK 1 ===== -->
+<!-- ===== START CLASS-5 CHUNK 2 ===== -->
+
+<body>
+
+<!-- =========================================
+     HEADER
+========================================= -->
+
+<header>
+
+  <div class="container nav">
+
+    <a href="index.html" class="brand">
+
+      <img
+        src="images/logo.jpg"
+        alt="Phoenix Logo"
+      >
+
+      <div>
+        <strong>PHOENIX CLASSROOM</strong>
+        <span>AI Foundation Course • Day 05</span>
+      </div>
+
+    </a>
+
+    <a
+      href="index.html#journey"
+      class="back"
+    >
+      ← Journey
+    </a>
+
+  </div>
+
+</header>
+
+
+<main>
+
+
+<!-- =========================================
+     HERO
+========================================= -->
+
+<section class="hero">
+
+  <div class="container">
+
+    <span class="kicker">
+      DAY 05 • THE NEXT CHAPTER
+    </span>
+
+    <h1>
+      AI CAREER<br>
+      <span>BLUEPRINT.</span>
+    </h1>
+
+    <p>
+      Five days introduced the tools.
+
+      Day 5 asks the bigger question:
+      where do you go from here?
+
+      Learning AI is only the beginning.
+      The next step is to keep learning,
+      build proof of your skills and create
+      a direction for your future.
+    </p>
+
+
+    <div class="hero-meta">
+
+      <span class="meta">
+        🎯 Career Direction
+      </span>
+
+      <span class="meta">
+        🧠 Skills
+      </span>
+
+      <span class="meta">
+        📜 Certificates
+      </span>
+
+      <span class="meta">
+        💼 Portfolio
+      </span>
+
+      <span class="meta">
+        🚀 What's Next?
+      </span>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================
+     FIVE-DAY JOURNEY
+========================================= -->
+
+<section class="section white">
+
+  <div class="container">
+
+    <div class="heading">
+
+      <small>
+        🔥 LOOK HOW FAR YOU CAME
+      </small>
+
+      <h2>
+        Five days.
+        One learning journey.
+      </h2>
+
+      <p>
+        The course was not meant to end with
+        knowing a few AI tools.
+
+        Each day added another layer to the
+        learner's ability to understand,
+        communicate, create and move forward.
+      </p>
+
+    </div>
+
+
+    <div class="final-shift">
+
+
+      <article class="shift-card">
+
+        <small>DAY 01</small>
+
+        <h3>
+          Understand
+        </h3>
+
+        <p>
+          Begin understanding the
+          changing world of AI.
+        </p>
+
+      </article>
+
+
+      <article class="shift-card">
+
+        <small>DAY 02</small>
+
+        <h3>
+          Communicate
+        </h3>
+
+        <p>
+          Learn to give AI
+          clearer instructions.
+        </p>
+
+      </article>
+
+
+      <article class="shift-card">
+
+        <small>DAY 03</small>
+
+        <h3>
+          Create
+        </h3>
+
+        <p>
+          Move from prompting
+          toward digital building.
+        </p>
+
+      </article>
+
+
+      <article class="shift-card">
+
+        <small>DAY 04</small>
+
+        <h3>
+          Build
+        </h3>
+
+        <p>
+          Explore practical
+          projects and live output.
+        </p>
+
+      </article>
+
+
+      <article class="shift-card">
+
+        <small>DAY 05</small>
+
+        <h3>
+          Continue
+        </h3>
+
+        <p>
+          Turn the foundation
+          into a longer learning path.
+        </p>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================
+     CAREER BLUEPRINT
+========================================= -->
+
+<section class="section soft">
+
+  <div class="container">
+
+    <div class="heading">
+
+      <small>
+        🧭 BUILD YOUR NEXT PATH
+      </small>
+
+      <h2>
+        AI is not one career.
+        It can strengthen many careers.
+      </h2>
+
+      <p>
+        Your next learning path does not have
+        to look exactly like someone else's.
+
+        The important thing is to identify
+        where AI can strengthen the work,
+        subject or career direction you want
+        to pursue.
+      </p>
+
+    </div>
+
+
+    <div class="path-grid">
+
+
+      <article class="path-card">
+
+        <div class="path-icon">
+          🎓
+        </div>
+
+        <h3>
+          Academic Path
+        </h3>
+
+        <p>
+          Continue learning through structured
+          courses, university resources and
+          recognised learning platforms.
+        </p>
+
+      </article>
+
+
+      <article class="path-card">
+
+        <div class="path-icon">
+          💼
+        </div>
+
+        <h3>
+          Career Path
+        </h3>
+
+        <p>
+          Develop AI-supported skills that
+          complement the career or industry
+          you want to enter.
+        </p>
+
+      </article>
+
+
+      <article class="path-card">
+
+        <div class="path-icon">
+          🛠️
+        </div>
+
+        <h3>
+          Builder Path
+        </h3>
+
+        <p>
+          Keep creating practical projects
+          that demonstrate what you can
+          actually do.
+        </p>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================
+     SKILL + CERTIFICATE + PORTFOLIO
+========================================= -->
+
+<section class="section white">
+
+  <div class="container">
+
+    <div class="heading">
+
+      <small>
+        📜 BEYOND THE CERTIFICATE
+      </small>
+
+      <h2>
+        Don't collect certificates.
+        Build evidence.
+      </h2>
+
+      <p>
+        A certificate can document learning,
+        but your strongest profile grows when
+        learning is combined with usable skills
+        and projects you can actually show.
+      </p>
+
+    </div>
+
+
+    <div class="cert-grid">
+
+
+      <article class="cert-box">
+
+        <span>
+          🧠
+        </span>
+
+        <h3>
+          Skill
+        </h3>
+
+        <p>
+          Learn something
+          you can actually use.
+        </p>
+
+      </article>
+
+
+      <div class="cert-plus">
+        +
+      </div>
+
+
+      <article class="cert-box">
+
+        <span>
+          📜
+        </span>
+
+        <h3>
+          Certificate
+        </h3>
+
+        <p>
+          Document structured
+          learning where useful.
+        </p>
+
+      </article>
+
+
+      <div class="cert-plus">
+        +
+      </div>
+
+
+      <article class="cert-box">
+
+        <span>
+          💼
+        </span>
+
+        <h3>
+          Portfolio
+        </h3>
+
+        <p>
+          Show the projects
+          you have actually built.
+        </p>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================
+     LEARNING & CERTIFICATE PLATFORMS
+========================================= -->
+
+<section class="section soft">
+
+  <div class="container">
+
+    <div class="heading">
+
+      <small>
+        🌍 WHERE CAN YOU LEARN NEXT?
+      </small>
+
+      <h2>
+        The five days are over.
+        Your learning isn't.
+      </h2>
+
+      <p>
+        Explore established learning platforms
+        according to your subject, career goals
+        and the skills you want to develop next.
+
+        Check each course's current eligibility,
+        fees and certificate conditions on the
+        platform before enrolling.
+      </p>
+
+    </div>
+
+
+    <div class="platform-grid">
+
+
+      <!-- SWAYAM -->
+
+      <article class="platform-card">
+
+        <div>
+
+          <div class="platform-top">
+
+            <div class="platform-icon">
+              S
+            </div>
+
+            <span class="platform-tag">
+              INDIA
+            </span>
+
+          </div>
+
+          <h3>
+            SWAYAM
+          </h3>
+
+          <p>
+            Explore online courses from
+            Indian educational institutions
+            across a wide range of subjects.
+          </p>
+
+          <div class="platform-best">
+            <strong>Best for:</strong>
+            Students looking for structured
+            academic and higher-education learning.
+          </div>
+
+        </div>
+
+        <a
+          href="https://swayam.gov.in/"
+          target="_blank"
+          rel="noopener"
+          class="platform-btn"
+        >
+          EXPLORE SWAYAM ↗
+        </a>
+
+      </article>
+
+
+
+      <!-- NPTEL -->
+
+      <article class="platform-card">
+
+        <div>
+
+          <div class="platform-top">
+
+            <div class="platform-icon">
+              N
+            </div>
+
+            <span class="platform-tag">
+              IIT • IISc
+            </span>
+
+          </div>
+
+          <h3>
+            NPTEL
+          </h3>
+
+          <p>
+            Explore structured online learning
+            across engineering, science,
+            humanities, management and
+            other academic areas.
+          </p>
+
+          <div class="platform-best">
+            <strong>Best for:</strong>
+            Learners who want deeper
+            subject-oriented courses.
+          </div>
+
+        </div>
+
+        <a
+          href="https://nptel.ac.in/"
+          target="_blank"
+          rel="noopener"
+          class="platform-btn"
+        >
+          EXPLORE NPTEL ↗
+        </a>
+
+      </article>
+
+
+
+      <!-- COURSERA -->
+
+      <article class="platform-card">
+
+        <div>
+
+          <div class="platform-top">
+
+            <div class="platform-icon">
+              C
+            </div>
+
+            <span class="platform-tag">
+              GLOBAL
+            </span>
+
+          </div>
+
+          <h3>
+            Coursera
+          </h3>
+
+          <p>
+            Explore courses and professional
+            learning pathways offered with
+            universities and companies.
+          </p>
+
+          <div class="platform-best">
+            <strong>Best for:</strong>
+            Professional skills, career learning
+            and specialised online programs.
+          </div>
+
+        </div>
+
+        <a
+          href="https://www.coursera.org/"
+          target="_blank"
+          rel="noopener"
+          class="platform-btn"
+        >
+          EXPLORE COURSERA ↗
+        </a>
+
+      </article>
+
+
+
+      <!-- SIMPLILEARN -->
+
+      <article class="platform-card">
+
+        <div>
+
+          <div class="platform-top">
+
+            <div class="platform-icon">
+              SL
+            </div>
+
+            <span class="platform-tag">
+              TECH SKILLS
+            </span>
+
+          </div>
+
+          <h3>
+            Simplilearn
+          </h3>
+
+          <p>
+            Explore career-oriented learning
+            in technology, AI, data,
+            digital skills and related areas.
+          </p>
+
+          <div class="platform-best">
+            <strong>Best for:</strong>
+            Learners exploring practical
+            technology and career skills.
+          </div>
+
+        </div>
+
+        <a
+          href="https://www.simplilearn.com/"
+          target="_blank"
+          rel="noopener"
+          class="platform-btn"
+        >
+          EXPLORE SIMPLILEARN ↗
+        </a>
+
+      </article>
+
+
+
+      <!-- MICROSOFT LEARN -->
+
+      <article class="platform-card">
+
+        <div>
+
+          <div class="platform-top">
+
+            <div class="platform-icon">
+              M
+            </div>
+
+            <span class="platform-tag">
+              MICROSOFT
+            </span>
+
+          </div>
+
+          <h3>
+            Microsoft Learn
+          </h3>
+
+          <p>
+            Explore Microsoft learning paths
+            for AI, cloud, data, development
+            and other Microsoft technologies.
+          </p>
+
+          <div class="platform-best">
+            <strong>Best for:</strong>
+            AI, Azure, cloud, data and
+            Microsoft technology pathways.
+          </div>
+
+        </div>
+
+        <a
+          href="https://learn.microsoft.com/training/"
+          target="_blank"
+          rel="noopener"
+          class="platform-btn"
+        >
+          EXPLORE MICROSOFT LEARN ↗
+        </a>
+
+      </article>
+
+
+
+      <!-- GOOGLE -->
+
+      <article class="platform-card">
+
+        <div>
+
+          <div class="platform-top">
+
+            <div class="platform-icon">
+              G
+            </div>
+
+            <span class="platform-tag">
+              GOOGLE
+            </span>
+
+          </div>
+
+          <h3>
+            Google Career Certificates
+          </h3>
+
+          <p>
+            Explore Google's career-focused
+            certificate pathways and professional
+            learning resources.
+          </p>
+
+          <div class="platform-best">
+            <strong>Best for:</strong>
+            Learners exploring structured
+            entry-level career skill pathways.
+          </div>
+
+        </div>
+
+        <a
+          href="https://grow.google/certificates/"
+          target="_blank"
+          rel="noopener"
+          class="platform-btn"
+        >
+          EXPLORE GOOGLE ↗
+        </a>
+
+      </article>
+
+
+
+      <!-- LINKEDIN LEARNING -->
+
+      <article class="platform-card">
+
+        <div>
+
+          <div class="platform-top">
+
+            <div class="platform-icon">
+              in
+            </div>
+
+            <span class="platform-tag">
+              PROFESSIONAL
+            </span>
+
+          </div>
+
+          <h3>
+            LinkedIn Learning
+          </h3>
+
+          <p>
+            Explore courses covering AI,
+            technology, business, workplace
+            skills and creative fields.
+          </p>
+
+          <div class="platform-best">
+            <strong>Best for:</strong>
+            Continuous professional learning
+            connected with career development.
+          </div>
+
+        </div>
+
+        <a
+          href="https://www.linkedin.com/learning/"
+          target="_blank"
+          rel="noopener"
+          class="platform-btn"
+        >
+          EXPLORE LINKEDIN LEARNING ↗
+        </a>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================
+     DAY 5 VIDEO RESOURCES
+========================================= -->
+
+<section class="section white">
+
+  <div class="container">
+
+    <div class="heading">
+
+      <small>
+        🎥 REVISIT DAY 05
+      </small>
+
+      <h2>
+        One final class.
+        Two ways to revisit it.
+      </h2>
+
+      <p>
+        Use the supporting video for an additional
+        Day 5 resource, or return to the complete
+        online classroom session.
+      </p>
+
+    </div>
+
+
+    <div class="video-grid">
+
+
+      <!-- SUPPORTING / UNLISTED VIDEO -->
+
+      <article class="video-card">
+
+        <div class="video-frame">
+
+          <iframe
+            src="https://www.youtube.com/embed/X6FeDPMG8KY"
+            title="Day 5 Supporting Video"
+            loading="lazy"
+            allow="
+              accelerometer;
+              autoplay;
+              clipboard-write;
+              encrypted-media;
+              gyroscope;
+              picture-in-picture;
+              web-share
+            "
+            allowfullscreen>
+          </iframe>
+
+        </div>
+
+        <div class="video-info">
+
+          <small>
+            🎬 SUPPORTING VIDEO
+          </small>
+
+          <h3>
+            Day 5 Additional Resource
+          </h3>
+
+          <p>
+            Revisit this supporting resource
+            alongside the final classroom session.
+          </p>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- FULL CLASS -->
+
+      <article class="video-card">
+
+        <div class="video-frame">
+
+          <iframe
+            src="https://www.youtube.com/embed/YC0vLDhAIZY"
+            title="Day 5 Full Online Class"
+            loading="lazy"
+            allow="
+              accelerometer;
+              autoplay;
+              clipboard-write;
+              encrypted-media;
+              gyroscope;
+              picture-in-picture;
+              web-share
+            "
+            allowfullscreen>
+          </iframe>
+
+        </div>
+
+        <div class="video-info">
+
+          <small>
+            ▶ FULL ONLINE CLASS
+          </small>
+
+          <h3>
+            Watch Day 5 Again
+          </h3>
+
+          <p>
+            Return to the complete final-day
+            classroom session whenever you want
+            to revisit the course conclusion.
+          </p>
+
+        </div>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ===== END CLASS-5 CHUNK 2 ===== -->
+        <!-- ===== START CLASS-5 CHUNK 3 ===== -->
+
+
+<!-- =========================================
+     ORIGINAL CLASS MATERIAL
+========================================= -->
+
+<section class="section soft">
+
+  <div class="container">
+
+    <div class="heading">
+
+      <small>
+        📚 ORIGINAL CLASS MATERIAL
+      </small>
+
+      <h2>
+        Reopen the AI Career Blueprint.
+      </h2>
+
+      <p>
+        Use the original Day 5 classroom presentation
+        whenever you want to revisit the final learning
+        and career-direction discussion.
+      </p>
+
+    </div>
+
+
+    <div class="material">
+
+      <div>
+
+        <h2>
+          🧭 AI Career Blueprint
+        </h2>
+
+        <p>
+          Original Day 5 classroom presentation.
+          Open it directly from the Phoenix Digital Classroom.
+        </p>
+
+      </div>
+
+
+      <a
+        class="material-btn"
+        href="materials/AI%20Career%20Blueprint.pptx"
+        target="_blank"
+        rel="noopener"
+      >
+        OPEN CLASS MATERIAL →
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================
+     WHAT NEXT?
+========================================= -->
+
+<section class="section white">
+
+  <div class="container">
+
+    <div class="heading">
+
+      <small>
+        🚀 WHAT NEXT?
+      </small>
+
+      <h2>
+        Don't stop at the end of the course.
+      </h2>
+
+      <p>
+        The five-day foundation gives you a starting point.
+        Your next progress will come from continuing to learn,
+        building real projects and choosing a path that matches
+        your own interests and goals.
+      </p>
+
+    </div>
+
+
+    <div class="path-grid">
+
+
+      <article class="path-card">
+
+        <div class="path-icon">
+          📚
+        </div>
+
+        <h3>
+          Keep Learning
+        </h3>
+
+        <p>
+          Choose one platform or structured course
+          and continue developing your skills consistently.
+        </p>
+
+      </article>
+
+
+      <article class="path-card">
+
+        <div class="path-icon">
+          🛠️
+        </div>
+
+        <h3>
+          Keep Building
+        </h3>
+
+        <p>
+          Turn what you learn into websites,
+          research support, content, workflows
+          or other practical digital projects.
+        </p>
+
+      </article>
+
+
+      <article class="path-card">
+
+        <div class="path-icon">
+          🧾
+        </div>
+
+        <h3>
+          Keep Evidence
+        </h3>
+
+        <p>
+          Save certificates, projects and useful work
+          so your learning becomes visible proof
+          of what you can do.
+        </p>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================
+     COURSE COMPLETION
+========================================= -->
+
+<section class="section dark-section">
+
+  <div class="container">
+
+    <div class="heading">
+
+      <small>
+        🎓 FIVE DAYS COMPLETE
+      </small>
+
+      <h2>
+        The classroom journey ends here.
+        The real journey does not.
+      </h2>
+
+      <p>
+        You moved from understanding AI
+        to prompting, building, observing live projects
+        and thinking about where these skills can take you next.
+      </p>
+
+    </div>
+
+
+    <div class="final-shift">
+
+
+      <article class="shift-card">
+
+        <small>
+          DAY 01
+        </small>
+
+        <h3>
+          Understand
+        </h3>
+
+        <p>
+          Intelligence and the AI shift.
+        </p>
+
+      </article>
+
+
+      <article class="shift-card">
+
+        <small>
+          DAY 02
+        </small>
+
+        <h3>
+          Prompt
+        </h3>
+
+        <p>
+          Structure intent and communicate clearly.
+        </p>
+
+      </article>
+
+
+      <article class="shift-card">
+
+        <small>
+          DAY 03
+        </small>
+
+        <h3>
+          Create
+        </h3>
+
+        <p>
+          Use AI and GitHub to build.
+        </p>
+
+      </article>
+
+
+      <article class="shift-card">
+
+        <small>
+          DAY 04
+        </small>
+
+        <h3>
+          Observe
+        </h3>
+
+        <p>
+          Learn from real student projects.
+        </p>
+
+      </article>
+
+
+      <article class="shift-card">
+
+        <small>
+          DAY 05
+        </small>
+
+        <h3>
+          Continue
+        </h3>
+
+        <p>
+          Choose the next learning path.
+        </p>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================
+     FINAL TAKEAWAY + QUEST TRANSITION
+========================================= -->
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="takeaway">
+
+      <span class="kicker">
+        🦅 COURSE COMPLETE
+      </span>
+
+
+      <h2>
+        You learned the foundation.
+        Now prove what you can do.
+      </h2>
+
+
+      <p>
+        Five days gave you the ideas, tools and direction.
+
+        The next step is not another lecture.
+
+        It is a challenge.
+
+        Enter the Phoenix Quest,
+        solve the gates and show how well
+        you can think, search, connect and create.
+      </p>
+
+
+      <div class="next-row">
+
+
+        <a
+          href="class-4.html"
+          class="next"
+        >
+          ← Day 04
+        </a>
+
+
+        <a
+          href="index.html#journey"
+          class="next"
+        >
+          5-Day Journey
+        </a>
+
+
+        <a
+          href="quest-access.html"
+          class="next"
+          style="
+            background:#e8662e;
+            color:#ffffff;
+          "
+        >
+          🔥 ENTER PHOENIX QUEST →
+        </a>
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- =========================================
+     JAVASCRIPT
+========================================= -->
+
+<script>
+
+/* =========================================
+   EXTERNAL LINKS
+
+   All learning-platform links and videos
+   open through their own services.
+========================================= */
+
+
+/* =========================================
+   OPTIONAL SMOOTH FOCUS FOR QUEST CTA
+========================================= */
+
+document
+.querySelectorAll(
+  "a[href^='#']"
+)
+.forEach(
+  function(link){
+
+    link.addEventListener(
+      "click",
+      function(event){
+
+        const targetId =
+          link.getAttribute(
+            "href"
+          );
+
+
+        if(
+          !targetId ||
+          targetId === "#"
+        ){
+          return;
+        }
+
+
+        const target =
+          document.querySelector(
+            targetId
+          );
+
+
+        if(target){
+
+          event.preventDefault();
+
+          target.scrollIntoView({
+            behavior:"smooth",
+            block:"start"
+          });
+
+        }
+
+      }
+    );
+
+  }
+);
+
+</script>
+
+
+</body>
+
+</html>
+
+<!-- ===== END CLASS-5 CHUNK 3 ===== -->
