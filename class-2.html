@@ -1580,7 +1580,322 @@ header{
   }
 
 }
+/* =========================================
+   STUDENT POSTER MINI SLIDER
+========================================= */
 
+.poster-showcase{
+  position:relative;
+}
+
+.poster-slider-shell{
+  position:relative;
+
+  padding:
+    26px 54px 22px;
+
+  border:
+    1px solid var(--line);
+
+  border-radius:24px;
+
+  background:#ffffff;
+
+  overflow:hidden;
+}
+
+
+.poster-slider{
+  display:flex;
+
+  gap:14px;
+
+  overflow-x:auto;
+
+  scroll-snap-type:x mandatory;
+
+  scroll-behavior:smooth;
+
+  scrollbar-width:none;
+
+  -webkit-overflow-scrolling:touch;
+}
+
+
+.poster-slider::-webkit-scrollbar{
+  display:none;
+}
+
+
+.poster-slide{
+  flex:
+    0 0
+    calc(
+      (100% - 28px) / 3
+    );
+
+  scroll-snap-align:start;
+
+  min-width:0;
+}
+
+
+.poster-card{
+  overflow:hidden;
+
+  height:100%;
+
+  border-radius:17px;
+
+  background:#f4f1eb;
+
+  border:
+    1px solid var(--line);
+
+  box-shadow:
+    0 9px 25px
+    rgba(19,45,70,.07);
+}
+
+
+.poster-card img{
+  width:100%;
+
+  aspect-ratio:
+    3 / 4;
+
+  object-fit:cover;
+
+  display:block;
+}
+
+
+.poster-caption{
+  padding:12px 13px;
+}
+
+
+.poster-caption small{
+  display:block;
+
+  color:var(--rust);
+
+  font-size:9px;
+
+  font-weight:900;
+
+  letter-spacing:1px;
+
+  text-transform:uppercase;
+}
+
+
+.poster-caption strong{
+  display:block;
+
+  margin-top:3px;
+
+  color:var(--navy);
+
+  font-size:13px;
+}
+
+
+/* ARROWS */
+
+.poster-arrow{
+  position:absolute;
+
+  z-index:5;
+
+  top:50%;
+
+  transform:
+    translateY(-50%);
+
+  width:42px;
+  height:42px;
+
+  display:grid;
+
+  place-items:center;
+
+  border:0;
+
+  border-radius:50%;
+
+  background:#ffffff;
+
+  color:var(--navy);
+
+  font-size:21px;
+
+  font-weight:900;
+
+  box-shadow:
+    0 7px 20px
+    rgba(19,45,70,.16);
+
+  cursor:pointer;
+}
+
+
+.poster-arrow.prev{
+  left:10px;
+}
+
+
+.poster-arrow.next{
+  right:10px;
+}
+
+
+/* DOTS */
+
+.poster-dots{
+  display:flex;
+
+  justify-content:center;
+
+  flex-wrap:wrap;
+
+  gap:7px;
+
+  margin-top:19px;
+}
+
+
+.poster-dot{
+  width:8px;
+  height:8px;
+
+  padding:0;
+
+  border:0;
+
+  border-radius:50%;
+
+  background:#c9c8c4;
+
+  cursor:pointer;
+
+  transition:
+    width .2s ease,
+    background .2s ease;
+}
+
+
+.poster-dot.active{
+  width:24px;
+
+  border-radius:20px;
+
+  background:var(--orange);
+}
+
+
+/* GALLERY NOTE */
+
+.poster-note{
+  margin-top:20px;
+
+  padding:17px;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:space-between;
+
+  gap:15px;
+
+  border-radius:16px;
+
+  background:var(--navy);
+
+  color:#ffffff;
+}
+
+
+.poster-note strong{
+  display:block;
+}
+
+
+.poster-note span{
+  display:block;
+
+  margin-top:2px;
+
+  color:#bcc6ce;
+
+  font-size:11px;
+}
+
+
+/* TABLET */
+
+@media(max-width:850px){
+
+  .poster-slide{
+    flex:
+      0 0
+      calc(
+        (100% - 14px) / 2
+      );
+  }
+
+}
+
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+  .poster-slider-shell{
+    padding:
+      18px 44px 18px;
+  }
+
+
+  .poster-slide{
+    flex:
+      0 0
+      88%;
+  }
+
+
+  .poster-card img{
+    aspect-ratio:
+      3 / 4;
+  }
+
+
+  .poster-arrow{
+    width:36px;
+    height:36px;
+
+    font-size:18px;
+  }
+
+
+  .poster-arrow.prev{
+    left:5px;
+  }
+
+
+  .poster-arrow.next{
+    right:5px;
+  }
+
+
+  .poster-note{
+    align-items:flex-start;
+
+    flex-direction:column;
+  }
+
+  }
 
 </style>
 
