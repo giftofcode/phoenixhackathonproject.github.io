@@ -1,0 +1,3924 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0"
+>
+
+<meta
+  name="theme-color"
+  content="#f6f3ea"
+>
+
+<title>
+  Class 3 | The Zero-Code Architect
+</title>
+
+
+<style>
+
+:root{
+
+  --cream:#f6f3ea;
+  --paper:#fffdf7;
+
+  --navy:#17324b;
+  --blue:#587da5;
+  --green:#2f9b67;
+
+  --orange:#e8672f;
+  --gold:#d9a54a;
+
+  --text:#25323c;
+  --muted:#71808a;
+
+  --line:#ddd7cc;
+
+  --dark:#091522;
+}
+
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+
+html{
+  scroll-behavior:smooth;
+}
+
+
+body{
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  background:
+    var(--cream);
+
+  color:
+    var(--text);
+
+  line-height:1.65;
+
+  overflow-x:hidden;
+}
+
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+
+button{
+  font:inherit;
+}
+
+
+img{
+  display:block;
+  max-width:100%;
+}
+
+
+.container{
+
+  width:
+    min(
+      1080px,
+      calc(100% - 28px)
+    );
+
+  margin:auto;
+}
+
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+header{
+
+  position:sticky;
+
+  top:0;
+
+  z-index:100;
+
+  background:
+    rgba(246,243,234,.94);
+
+  -webkit-backdrop-filter:
+    blur(14px);
+
+  backdrop-filter:
+    blur(14px);
+
+  border-bottom:
+    1px solid var(--line);
+}
+
+
+.nav{
+
+  min-height:68px;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:
+    space-between;
+
+  gap:12px;
+}
+
+
+.brand{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:10px;
+}
+
+
+.brand img{
+
+  width:42px;
+  height:42px;
+
+  object-fit:contain;
+
+  border-radius:12px;
+
+  background:#ffffff;
+}
+
+
+.brand strong{
+
+  display:block;
+
+  color:
+    var(--navy);
+
+  font-size:13px;
+}
+
+
+.brand span{
+
+  display:block;
+
+  color:
+    var(--muted);
+
+  font-size:10px;
+}
+
+
+.back{
+
+  padding:
+    9px 12px;
+
+  border:
+    1px solid var(--line);
+
+  border-radius:10px;
+
+  background:#ffffff;
+
+  font-size:12px;
+
+  font-weight:800;
+}
+
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero{
+
+  position:relative;
+
+  overflow:hidden;
+
+  padding:
+    80px 0 62px;
+
+  background:
+
+    radial-gradient(
+      circle at 85% 15%,
+      rgba(47,155,103,.18),
+      transparent 30%
+    ),
+
+    radial-gradient(
+      circle at 10% 85%,
+      rgba(88,125,165,.18),
+      transparent 32%
+    ),
+
+    var(--cream);
+}
+
+
+.hero::after{
+
+  content:"</>";
+
+  position:absolute;
+
+  right:2%;
+
+  bottom:-55px;
+
+  color:
+    rgba(23,50,75,.05);
+
+  font-size:
+    clamp(
+      110px,
+      20vw,
+      230px
+    );
+
+  font-weight:900;
+
+  pointer-events:none;
+}
+
+
+.kicker{
+
+  position:relative;
+
+  z-index:2;
+
+  display:inline-block;
+
+  padding:
+    7px 11px;
+
+  border-radius:50px;
+
+  background:
+    rgba(47,155,103,.10);
+
+  color:
+    var(--green);
+
+  font-size:11px;
+
+  font-weight:900;
+
+  letter-spacing:1.3px;
+}
+
+
+.hero h1{
+
+  position:relative;
+
+  z-index:2;
+
+  max-width:900px;
+
+  margin:
+    17px 0 19px;
+
+  color:
+    var(--navy);
+
+  font-size:
+    clamp(
+      44px,
+      9vw,
+      90px
+    );
+
+  line-height:.95;
+
+  letter-spacing:-4px;
+}
+
+
+.hero h1 span{
+
+  color:
+    var(--green);
+}
+
+
+.hero p{
+
+  position:relative;
+
+  z-index:2;
+
+  max-width:730px;
+
+  color:#596772;
+
+  font-size:17px;
+}
+
+
+.hero-meta{
+
+  position:relative;
+
+  z-index:2;
+
+  display:flex;
+
+  flex-wrap:wrap;
+
+  gap:8px;
+
+  margin-top:23px;
+}
+
+
+.meta{
+
+  padding:
+    8px 11px;
+
+  border:
+    1px solid var(--line);
+
+  border-radius:50px;
+
+  background:
+    rgba(255,255,255,.68);
+
+  color:
+    var(--navy);
+
+  font-size:11px;
+
+  font-weight:800;
+}
+
+
+
+/* =========================================
+   GENERAL SECTIONS
+========================================= */
+
+.section{
+
+  padding:
+    68px 0;
+}
+
+
+.white{
+
+  background:
+    var(--paper);
+}
+
+
+.soft{
+
+  background:
+    #edf2ef;
+}
+
+
+.dark-section{
+
+  background:
+    var(--dark);
+
+  color:#ffffff;
+}
+
+
+.heading{
+
+  max-width:780px;
+
+  margin-bottom:29px;
+}
+
+
+.heading small{
+
+  color:
+    var(--green);
+
+  font-size:11px;
+
+  font-weight:900;
+
+  letter-spacing:1px;
+}
+
+
+.heading h2{
+
+  color:
+    var(--navy);
+
+  font-size:
+    clamp(
+      30px,
+      6vw,
+      52px
+    );
+
+  line-height:1.05;
+
+  margin:
+    8px 0 10px;
+}
+
+
+.dark-section .heading h2{
+
+  color:#ffffff;
+}
+
+
+.heading p{
+
+  color:
+    var(--muted);
+}
+
+
+.dark-section .heading p{
+
+  color:#aab6c1;
+}
+
+
+
+/* =========================================
+   PARADIGM SHIFT
+========================================= */
+
+.shift-grid{
+
+  display:grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap:14px;
+}
+
+
+.shift-card{
+
+  padding:24px;
+
+  border-radius:20px;
+
+  border:
+    1px solid var(--line);
+
+  background:#ffffff;
+}
+
+
+.shift-card.old{
+
+  background:#f1eee8;
+}
+
+
+.shift-card.new{
+
+  background:#e7f1ec;
+
+  border-color:
+    rgba(47,155,103,.25);
+}
+
+
+.shift-card small{
+
+  display:block;
+
+  color:
+    var(--green);
+
+  font-weight:900;
+
+  font-size:10px;
+
+  letter-spacing:1px;
+}
+
+
+.shift-card h3{
+
+  color:
+    var(--navy);
+
+  font-size:23px;
+
+  margin:
+    8px 0 12px;
+}
+
+
+.shift-row{
+
+  padding:
+    10px 0;
+
+  border-bottom:
+    1px solid var(--line);
+}
+
+
+.shift-row:last-child{
+
+  border-bottom:0;
+}
+
+
+.shift-row span{
+
+  display:block;
+
+  color:
+    var(--muted);
+
+  font-size:10px;
+}
+
+
+.shift-row strong{
+
+  color:
+    var(--navy);
+}
+
+
+
+/* =========================================
+   DIGITAL REAL ESTATE
+========================================= */
+
+.real-estate{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(4,1fr);
+
+  gap:10px;
+}
+
+
+.real-card{
+
+  padding:20px;
+
+  border-radius:18px;
+
+  background:#ffffff;
+
+  border:
+    1px solid var(--line);
+}
+
+
+.real-card .icon{
+
+  font-size:30px;
+
+  margin-bottom:9px;
+}
+
+
+.real-card h3{
+
+  color:
+    var(--navy);
+
+  font-size:17px;
+}
+
+
+.real-card p{
+
+  color:
+    var(--muted);
+
+  font-size:12px;
+
+  margin-top:6px;
+}
+
+
+
+/* =========================================
+   BUILDER / LANDLORD
+========================================= */
+
+.engine-grid{
+
+  display:grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap:14px;
+}
+
+
+.engine-card{
+
+  padding:25px;
+
+  border-radius:20px;
+
+  background:#ffffff;
+
+  border:
+    1px solid var(--line);
+
+  text-align:center;
+}
+
+
+.engine-icon{
+
+  font-size:42px;
+
+  margin-bottom:10px;
+}
+
+
+.engine-card h3{
+
+  color:
+    var(--navy);
+
+  font-size:22px;
+}
+
+
+.engine-card p{
+
+  color:
+    var(--muted);
+
+  font-size:13px;
+
+  margin-top:8px;
+}
+
+
+/* ===== END CLASS-3 CHUNK 1 ===== */
+  /* =========================================
+   WEB LANGUAGES
+========================================= */
+
+.web-stack{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(3,1fr);
+
+  gap:12px;
+}
+
+
+.stack-card{
+
+  padding:22px;
+
+  border-radius:18px;
+
+  background:#ffffff;
+
+  border:
+    1px solid var(--line);
+}
+
+
+.stack-letter{
+
+  width:50px;
+  height:50px;
+
+  display:grid;
+
+  place-items:center;
+
+  border-radius:14px;
+
+  background:
+    var(--navy);
+
+  color:#ffffff;
+
+  font-size:22px;
+
+  font-weight:900;
+
+  margin-bottom:12px;
+}
+
+
+.stack-card:nth-child(2)
+.stack-letter{
+
+  background:
+    var(--blue);
+}
+
+
+.stack-card:nth-child(3)
+.stack-letter{
+
+  background:
+    var(--green);
+}
+
+
+.stack-card h3{
+
+  color:
+    var(--navy);
+
+  font-size:20px;
+}
+
+
+.stack-card p{
+
+  color:
+    var(--muted);
+
+  font-size:12px;
+
+  margin-top:6px;
+}
+
+
+
+/* =========================================
+   RULE ZERO
+========================================= */
+
+.rule-zero{
+
+  display:grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap:14px;
+}
+
+
+.rule-card{
+
+  padding:24px;
+
+  border-radius:19px;
+
+  border:
+    1px solid var(--line);
+
+  background:#ffffff;
+}
+
+
+.rule-card.bad{
+
+  background:#f7e9e7;
+
+  border-color:
+    rgba(180,47,47,.25);
+}
+
+
+.rule-card.good{
+
+  background:#e8f3ec;
+
+  border-color:
+    rgba(47,155,103,.25);
+}
+
+
+.rule-card small{
+
+  display:block;
+
+  font-size:10px;
+
+  font-weight:900;
+
+  letter-spacing:1px;
+
+  margin-bottom:8px;
+}
+
+
+.rule-card.bad small{
+
+  color:#b33a3a;
+}
+
+
+.rule-card.good small{
+
+  color:var(--green);
+}
+
+
+.rule-card code{
+
+  display:block;
+
+  padding:10px;
+
+  border-radius:11px;
+
+  background:
+    rgba(255,255,255,.60);
+
+  color:
+    var(--navy);
+
+  font-size:14px;
+
+  margin-bottom:10px;
+}
+
+
+.rule-card p{
+
+  color:
+    var(--muted);
+
+  font-size:12px;
+}
+
+
+
+/* =========================================
+   GITHUB STEPS
+========================================= */
+
+.steps{
+
+  display:grid;
+
+  gap:11px;
+}
+
+
+.step{
+
+  display:grid;
+
+  grid-template-columns:
+    58px 1fr;
+
+  gap:15px;
+
+  align-items:start;
+
+  padding:18px;
+
+  border-radius:17px;
+
+  background:#ffffff;
+
+  border:
+    1px solid var(--line);
+}
+
+
+.step-number{
+
+  width:50px;
+  height:50px;
+
+  display:grid;
+
+  place-items:center;
+
+  border-radius:14px;
+
+  background:
+    var(--green);
+
+  color:#ffffff;
+
+  font-weight:900;
+}
+
+
+.step h3{
+
+  color:
+    var(--navy);
+
+  font-size:18px;
+}
+
+
+.step p{
+
+  color:
+    var(--muted);
+
+  font-size:12px;
+
+  margin-top:5px;
+}
+
+
+
+/* =========================================
+   CTF PROMPT FOR CODE
+========================================= */
+
+.ctf-grid{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(3,1fr);
+
+  gap:12px;
+}
+
+
+.ctf-card{
+
+  padding:23px;
+
+  border-radius:18px;
+
+  background:#ffffff;
+
+  border:
+    1px solid var(--line);
+}
+
+
+.ctf-letter{
+
+  width:48px;
+  height:48px;
+
+  display:grid;
+
+  place-items:center;
+
+  border-radius:13px;
+
+  background:
+    var(--blue);
+
+  color:#ffffff;
+
+  font-size:22px;
+
+  font-weight:900;
+
+  margin-bottom:12px;
+}
+
+
+.ctf-card:nth-child(2)
+.ctf-letter{
+
+  background:
+    var(--green);
+}
+
+
+.ctf-card:nth-child(3)
+.ctf-letter{
+
+  background:
+    var(--gold);
+}
+
+
+.ctf-card h3{
+
+  color:
+    var(--navy);
+
+  font-size:18px;
+}
+
+
+.ctf-card p{
+
+  color:
+    var(--muted);
+
+  font-size:12px;
+
+  margin-top:6px;
+}
+
+
+
+/* =========================================
+   COPY / PASTE WORKFLOW
+========================================= */
+
+.copy-grid{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(3,1fr);
+
+  gap:12px;
+}
+
+
+.copy-card{
+
+  padding:22px;
+
+  border-radius:18px;
+
+  background:#ffffff;
+
+  border:
+    1px solid var(--line);
+}
+
+
+.copy-card small{
+
+  display:block;
+
+  color:
+    var(--green);
+
+  font-size:10px;
+
+  font-weight:900;
+
+  letter-spacing:1px;
+}
+
+
+.copy-card h3{
+
+  color:
+    var(--navy);
+
+  font-size:18px;
+
+  margin:
+    7px 0 5px;
+}
+
+
+.copy-card p{
+
+  color:
+    var(--muted);
+
+  font-size:12px;
+}
+
+
+
+/* =========================================
+   ECOSYSTEM LOOP
+========================================= */
+
+.loop-grid{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(4,1fr);
+
+  gap:10px;
+}
+
+
+.loop-card{
+
+  padding:20px;
+
+  border-radius:18px;
+
+  background:#ffffff;
+
+  border:
+    1px solid var(--line);
+
+  text-align:center;
+}
+
+
+.loop-icon{
+
+  font-size:30px;
+
+  margin-bottom:8px;
+}
+
+
+.loop-card h3{
+
+  color:
+    var(--navy);
+
+  font-size:16px;
+}
+
+
+.loop-card p{
+
+  color:
+    var(--muted);
+
+  font-size:11px;
+
+  margin-top:5px;
+}
+
+
+
+/* =========================================
+   MONETIZATION
+========================================= */
+
+.money-grid{
+
+  display:grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap:14px;
+}
+
+
+.money-card{
+
+  padding:24px;
+
+  border-radius:19px;
+
+  background:#ffffff;
+
+  border:
+    1px solid var(--line);
+}
+
+
+.money-card small{
+
+  display:block;
+
+  color:
+    var(--green);
+
+  font-size:10px;
+
+  font-weight:900;
+
+  letter-spacing:1px;
+}
+
+
+.money-card h3{
+
+  color:
+    var(--navy);
+
+  font-size:21px;
+
+  margin:
+    8px 0;
+}
+
+
+.money-card p{
+
+  color:
+    var(--muted);
+
+  font-size:12px;
+}
+
+
+
+/* =========================================
+   QUICK RECALL
+========================================= */
+
+.recall-grid{
+
+  display:grid;
+
+  gap:10px;
+}
+
+
+.recall{
+
+  overflow:hidden;
+
+  border:
+    1px solid var(--line);
+
+  border-radius:15px;
+
+  background:#ffffff;
+}
+
+
+.recall button{
+
+  width:100%;
+
+  padding:17px;
+
+  border:0;
+
+  background:#ffffff;
+
+  text-align:left;
+
+  color:
+    var(--navy);
+
+  font-weight:900;
+
+  cursor:pointer;
+}
+
+
+.answer{
+
+  display:none;
+
+  padding:
+    0 17px 17px;
+
+  color:
+    var(--muted);
+
+  font-size:13px;
+}
+
+
+.recall.open .answer{
+
+  display:block;
+}
+
+
+
+/* =========================================
+   VIDEOS
+========================================= */
+
+.video-grid{
+
+  display:grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap:18px;
+}
+
+
+.video-card{
+
+  overflow:hidden;
+
+  border-radius:19px;
+
+  border:
+    1px solid var(--line);
+
+  background:#ffffff;
+}
+
+
+.video-frame{
+
+  width:100%;
+
+  aspect-ratio:
+    16 / 9;
+
+  background:#000000;
+}
+
+
+.video-frame iframe{
+
+  width:100%;
+  height:100%;
+
+  display:block;
+
+  border:0;
+}
+
+
+.short-frame{
+
+  max-width:340px;
+
+  margin:auto;
+
+  aspect-ratio:
+    9 / 16;
+}
+
+
+.video-info{
+
+  padding:17px;
+}
+
+
+.video-info small{
+
+  color:
+    var(--green);
+
+  font-weight:900;
+}
+
+
+.video-info h3{
+
+  color:
+    var(--navy);
+
+  margin:
+    4px 0;
+}
+
+
+.video-info p{
+
+  color:
+    var(--muted);
+
+  font-size:12px;
+}
+
+
+
+/* =========================================
+   CLASS MATERIAL
+========================================= */
+
+.material{
+
+  display:grid;
+
+  grid-template-columns:
+    1fr auto;
+
+  gap:20px;
+
+  align-items:center;
+
+  padding:30px;
+
+  border-radius:23px;
+
+  background:
+    var(--dark);
+
+  color:#ffffff;
+}
+
+
+.material h2{
+
+  line-height:1.2;
+}
+
+
+.material p{
+
+  color:#a9b3bd;
+
+  font-size:13px;
+
+  margin-top:7px;
+}
+
+
+.material-btn{
+
+  display:inline-flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  min-height:50px;
+
+  padding:
+    12px 18px;
+
+  border-radius:13px;
+
+  background:
+    var(--green);
+
+  color:#ffffff;
+
+  font-weight:900;
+}
+
+
+
+/* =========================================
+   FINAL TAKEAWAY
+========================================= */
+
+.takeaway{
+
+  padding:
+    42px 25px;
+
+  border-radius:25px;
+
+  text-align:center;
+
+  background:
+
+    radial-gradient(
+      circle at top right,
+      rgba(47,155,103,.22),
+      transparent 35%
+    ),
+
+    var(--navy);
+
+  color:#ffffff;
+}
+
+
+.takeaway h2{
+
+  font-size:
+    clamp(
+      32px,
+      7vw,
+      56px
+    );
+
+  line-height:1.05;
+
+  margin-top:14px;
+}
+
+
+.takeaway p{
+
+  max-width:700px;
+
+  margin:
+    14px auto;
+
+  color:#b8c3cc;
+}
+
+
+.next-row{
+
+  display:flex;
+
+  justify-content:center;
+
+  flex-wrap:wrap;
+
+  gap:10px;
+
+  margin-top:23px;
+}
+
+
+.next{
+
+  padding:
+    13px 18px;
+
+  border-radius:12px;
+
+  border:0;
+
+  background:#ffffff;
+
+  color:
+    var(--navy);
+
+  font-weight:900;
+
+  cursor:pointer;
+}
+
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media(max-width:760px){
+
+  .hero{
+
+    padding:
+      55px 0 44px;
+  }
+
+
+  .hero h1{
+
+    letter-spacing:-2px;
+  }
+
+
+  .shift-grid,
+  .real-estate,
+  .engine-grid,
+  .web-stack,
+  .rule-zero,
+  .ctf-grid,
+  .copy-grid,
+  .loop-grid,
+  .money-grid,
+  .video-grid{
+
+    grid-template-columns:1fr;
+  }
+
+
+  .material{
+
+    grid-template-columns:1fr;
+  }
+
+
+  .material-btn{
+
+    width:100%;
+  }
+
+}
+
+
+@media(max-width:520px){
+
+  .section{
+
+    padding:
+      52px 0;
+  }
+
+
+  .brand span{
+
+    display:none;
+  }
+
+
+  .step{
+
+    grid-template-columns:
+      48px 1fr;
+  }
+
+
+  .step-number{
+
+    width:42px;
+    height:42px;
+  }
+
+
+  .material{
+
+    padding:
+      23px 18px;
+  }
+
+}
+
+
+</style>
+
+</head>
+
+<!-- ===== END CLASS-3 CHUNK 2 ===== -->
+  <!-- ===== START CLASS-3 CHUNK 3 ===== -->
+
+<body>
+
+
+<!-- =========================================
+     HEADER
+========================================= -->
+
+<header>
+
+  <div class="container nav">
+
+    <a
+      href="index.html"
+      class="brand"
+    >
+
+      <img
+        src="images/logo.jpg"
+        alt="Phoenix Logo"
+      >
+
+      <div>
+
+        <strong>
+          PHOENIX CLASSROOM
+        </strong>
+
+        <span>
+          AI Foundation Course • Day 03
+        </span>
+
+      </div>
+
+    </a>
+
+
+    <a
+      href="index.html#journey"
+      class="back"
+    >
+      ← Journey
+    </a>
+
+  </div>
+
+</header>
+
+
+
+<main>
+
+
+<!-- =========================================
+     HERO
+========================================= -->
+
+<section class="hero">
+
+  <div class="container">
+
+    <span class="kicker">
+      DAY 03 • DIGITAL CLASSROOM
+    </span>
+
+
+    <h1>
+
+      THE ZERO-CODE<br>
+
+      <span>
+        ARCHITECT.
+      </span>
+
+    </h1>
+
+
+    <p>
+      Day 3 turned AI knowledge into creation.
+
+      The mission was simple:
+      learn how a complete beginner can use
+      AI and GitHub to move from an idea
+      to a live website — without beginning
+      as a traditional programmer.
+    </p>
+
+
+    <div class="hero-meta">
+
+      <span class="meta">
+        🤖 AI Builder
+      </span>
+
+      <span class="meta">
+        🐙 GitHub
+      </span>
+
+      <span class="meta">
+        🌐 Websites
+      </span>
+
+      <span class="meta">
+        &lt;/&gt; HTML • CSS • JS
+      </span>
+
+      <span class="meta">
+        🚀 GitHub Pages
+      </span>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================
+     THE PARADIGM SHIFT
+========================================= -->
+
+<section class="section white">
+
+  <div class="container">
+
+    <div class="heading">
+
+      <small>
+        ⚡ THE PARADIGM SHIFT
+      </small>
+
+      <h2>
+        From coder-first
+        to creator-first.
+      </h2>
+
+      <p>
+        The class introduced a different approach
+        to building for the web.
+
+        Instead of beginning with months of syntax,
+        begin with the idea — then use AI to help
+        translate that idea into code.
+      </p>
+
+    </div>
+
+
+    <div class="shift-grid">
+
+
+      <article class="shift-card old">
+
+        <small>
+          TRADITIONAL PATH
+        </small>
+
+        <h3>
+          Learn first. Build later.
+        </h3>
+
+
+        <div class="shift-row">
+
+          <span>
+            STEP 01
+          </span>
+
+          <strong>
+            Learn syntax
+          </strong>
+
+        </div>
+
+
+        <div class="shift-row">
+
+          <span>
+            STEP 02
+          </span>
+
+          <strong>
+            Understand programming
+          </strong>
+
+        </div>
+
+
+        <div class="shift-row">
+
+          <span>
+            STEP 03
+          </span>
+
+          <strong>
+            Practice for months
+          </strong>
+
+        </div>
+
+
+        <div class="shift-row">
+
+          <span>
+            STEP 04
+          </span>
+
+          <strong>
+            Finally build
+          </strong>
+
+        </div>
+
+      </article>
+
+
+
+      <article class="shift-card new">
+
+        <small>
+          AI-NATIVE PATH
+        </small>
+
+        <h3>
+          Imagine. Prompt. Build.
+        </h3>
+
+
+        <div class="shift-row">
+
+          <span>
+            STEP 01
+          </span>
+
+          <strong>
+            Define the idea
+          </strong>
+
+        </div>
+
+
+        <div class="shift-row">
+
+          <span>
+            STEP 02
+          </span>
+
+          <strong>
+            Explain it clearly to AI
+          </strong>
+
+        </div>
+
+
+        <div class="shift-row">
+
+          <span>
+            STEP 03
+          </span>
+
+          <strong>
+            Generate the code
+          </strong>
+
+        </div>
+
+
+        <div class="shift-row">
+
+          <span>
+            STEP 04
+          </span>
+
+          <strong>
+            Deploy and improve
+          </strong>
+
+        </div>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================
+     DIGITAL REAL ESTATE
+========================================= -->
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="heading">
+
+      <small>
+        🏠 DIGITAL REAL ESTATE
+      </small>
+
+      <h2>
+        Think of a website
+        like building on digital land.
+      </h2>
+
+      <p>
+        One of the central ideas of Day 3 was
+        understanding GitHub not merely as a place
+        for programmers, but as infrastructure where
+        your website files can live.
+      </p>
+
+    </div>
+
+
+    <div class="real-estate">
+
+
+      <article class="real-card">
+
+        <div class="icon">
+          💡
+        </div>
+
+        <h3>
+          Your Idea
+        </h3>
+
+        <p>
+          First decide what you want
+          your digital creation to become.
+        </p>
+
+      </article>
+
+
+
+      <article class="real-card">
+
+        <div class="icon">
+          🤖
+        </div>
+
+        <h3>
+          AI Builds
+        </h3>
+
+        <p>
+          Your instructions can be translated
+          into HTML, CSS and JavaScript.
+        </p>
+
+      </article>
+
+
+
+      <article class="real-card">
+
+        <div class="icon">
+          🐙
+        </div>
+
+        <h3>
+          GitHub Stores
+        </h3>
+
+        <p>
+          The repository becomes the place
+          where your website files are kept.
+        </p>
+
+      </article>
+
+
+
+      <article class="real-card">
+
+        <div class="icon">
+          🌐
+        </div>
+
+        <h3>
+          Pages Publishes
+        </h3>
+
+        <p>
+          GitHub Pages can turn those files
+          into a website people can visit.
+        </p>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================
+     BUILDER + LANDLORD
+========================================= -->
+
+<section class="section soft">
+
+  <div class="container">
+
+    <div class="heading">
+
+      <small>
+        🧱 THE BUILDING TEAM
+      </small>
+
+      <h2>
+        AI builds.
+        GitHub gives it a home.
+      </h2>
+
+      <p>
+        The tools have different jobs.
+        Understanding those jobs makes
+        the whole workflow much easier.
+      </p>
+
+    </div>
+
+
+    <div class="engine-grid">
+
+
+      <article class="engine-card">
+
+        <div class="engine-icon">
+          🤖
+        </div>
+
+        <h3>
+          ChatGPT = The Builder
+        </h3>
+
+        <p>
+          You describe the website you need.
+
+          AI can help generate and revise
+          the code required to create it.
+        </p>
+
+      </article>
+
+
+
+      <article class="engine-card">
+
+        <div class="engine-icon">
+          🐙
+        </div>
+
+        <h3>
+          GitHub = The Digital Land
+        </h3>
+
+        <p>
+          Your project files are stored
+          inside a repository.
+
+          GitHub Pages can then make
+          the project accessible on the web.
+        </p>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================
+     THE THREE WEB LANGUAGES
+========================================= -->
+
+<section class="section white">
+
+  <div class="container">
+
+    <div class="heading">
+
+      <small>
+        🧠 REMEMBER THIS
+      </small>
+
+      <h2>
+        A website has a skeleton,
+        clothes and muscles.
+      </h2>
+
+      <p>
+        Day 3 simplified the three core web
+        technologies using an easy mental model.
+      </p>
+
+    </div>
+
+
+    <div class="web-stack">
+
+
+      <article class="stack-card">
+
+        <div class="stack-letter">
+          H
+        </div>
+
+        <h3>
+          HTML = Skeleton
+        </h3>
+
+        <p>
+          HTML provides the structure.
+
+          Headings, paragraphs, buttons,
+          images and sections begin here.
+        </p>
+
+      </article>
+
+
+
+      <article class="stack-card">
+
+        <div class="stack-letter">
+          C
+        </div>
+
+        <h3>
+          CSS = Clothes
+        </h3>
+
+        <p>
+          CSS controls presentation.
+
+          Colours, spacing, typography,
+          layout and visual styling live here.
+        </p>
+
+      </article>
+
+
+
+      <article class="stack-card">
+
+        <div class="stack-letter">
+          JS
+        </div>
+
+        <h3>
+          JavaScript = Muscles
+        </h3>
+
+        <p>
+          JavaScript adds behaviour.
+
+          It helps buttons, interactions
+          and dynamic features actually work.
+        </p>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ===== END CLASS-3 CHUNK 3 ===== -->
+  <!-- ===== START CLASS-3 CHUNK 4 ===== -->
+
+
+<!-- =========================================
+     RULE ZERO — INDEX.HTML
+========================================= -->
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="heading">
+
+      <small>
+        🚨 RULE ZERO
+      </small>
+
+      <h2>
+        Your homepage needs
+        the right name.
+      </h2>
+
+      <p>
+        A tiny naming mistake can stop your website
+        from behaving the way you expect.
+
+        The class emphasized one filename
+        you should remember:
+        <strong>index.html</strong>
+      </p>
+
+    </div>
+
+
+    <div class="rule-zero">
+
+
+      <article class="rule-card bad">
+
+        <small>
+          ❌ DON'T DO THIS
+        </small>
+
+        <code>
+          Index.html
+        </code>
+
+        <code>
+          INDEX.HTML
+        </code>
+
+        <code>
+          homepage.html
+        </code>
+
+        <p>
+          Computers care about exact names.
+          Small differences can matter.
+        </p>
+
+      </article>
+
+
+
+      <article class="rule-card good">
+
+        <small>
+          ✅ REMEMBER THIS
+        </small>
+
+        <code>
+          index.html
+        </code>
+
+        <p>
+          Lowercase.
+
+          Exact spelling.
+
+          This is the standard homepage filename
+          used in the Day 3 deployment workflow.
+        </p>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================
+     GITHUB REPOSITORY
+========================================= -->
+
+<section class="section white">
+
+  <div class="container">
+
+    <div class="heading">
+
+      <small>
+        🐙 BUILD YOUR DIGITAL LAND
+      </small>
+
+      <h2>
+        From an empty repository
+        to a live project.
+      </h2>
+
+      <p>
+        GitHub may look technical at first,
+        but the classroom workflow can be remembered
+        as a simple sequence.
+      </p>
+
+    </div>
+
+
+    <div class="steps">
+
+
+      <article class="step">
+
+        <div class="step-number">
+          01
+        </div>
+
+        <div>
+
+          <h3>
+            Create your GitHub account
+          </h3>
+
+          <p>
+            Your account becomes the identity
+            from which your repositories
+            and projects are managed.
+          </p>
+
+        </div>
+
+      </article>
+
+
+
+      <article class="step">
+
+        <div class="step-number">
+          02
+        </div>
+
+        <div>
+
+          <h3>
+            Create a new repository
+          </h3>
+
+          <p>
+            Think of the repository as the
+            digital space that will hold
+            the files of your website.
+          </p>
+
+        </div>
+
+      </article>
+
+
+
+      <article class="step">
+
+        <div class="step-number">
+          03
+        </div>
+
+        <div>
+
+          <h3>
+            Add index.html
+          </h3>
+
+          <p>
+            Create the main website file
+            and keep its name exactly
+            <strong>index.html</strong>.
+          </p>
+
+        </div>
+
+      </article>
+
+
+
+      <article class="step">
+
+        <div class="step-number">
+          04
+        </div>
+
+        <div>
+
+          <h3>
+            Paste your generated code
+          </h3>
+
+          <p>
+            Take the website code created with AI
+            and place it inside the correct file.
+          </p>
+
+        </div>
+
+      </article>
+
+
+
+      <article class="step">
+
+        <div class="step-number">
+          05
+        </div>
+
+        <div>
+
+          <h3>
+            Commit the changes
+          </h3>
+
+          <p>
+            Save the changes in the repository
+            so GitHub has the latest version
+            of your project.
+          </p>
+
+        </div>
+
+      </article>
+
+
+
+      <article class="step">
+
+        <div class="step-number">
+          06
+        </div>
+
+        <div>
+
+          <h3>
+            Enable GitHub Pages
+          </h3>
+
+          <p>
+            Use the repository's Pages settings
+            to publish the project as a website.
+          </p>
+
+        </div>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================
+     DEPLOYMENT MEMORY
+========================================= -->
+
+<section class="section soft">
+
+  <div class="container">
+
+    <div class="heading">
+
+      <small>
+        🌐 DEPLOYMENT MEMORY
+      </small>
+
+      <h2>
+        Repository ≠ Website
+        until you publish it.
+      </h2>
+
+      <p>
+        Saving code on GitHub and publishing
+        that code through GitHub Pages are
+        connected steps, but they are not
+        the same thing.
+      </p>
+
+    </div>
+
+
+    <div class="engine-grid">
+
+
+      <article class="engine-card">
+
+        <div class="engine-icon">
+          📁
+        </div>
+
+        <h3>
+          Repository
+        </h3>
+
+        <p>
+          Stores the files and
+          versions of your project.
+        </p>
+
+      </article>
+
+
+
+      <article class="engine-card">
+
+        <div class="engine-icon">
+          🚀
+        </div>
+
+        <h3>
+          GitHub Pages
+        </h3>
+
+        <p>
+          Publishes the website so it can
+          be opened through a web address.
+        </p>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================
+     C-T-F FOR WEBSITE CREATION
+========================================= -->
+
+<section class="section white">
+
+  <div class="container">
+
+    <div class="heading">
+
+      <small>
+        🎯 DAY 2 → DAY 3
+      </small>
+
+      <h2>
+        C-T-F now becomes
+        a building tool.
+      </h2>
+
+      <p>
+        The prompting framework from Day 2
+        can now be applied to website creation.
+
+        Better instructions give AI a clearer
+        picture of what it needs to build.
+      </p>
+
+    </div>
+
+
+    <div class="ctf-grid">
+
+
+      <article class="ctf-card">
+
+        <div class="ctf-letter">
+          C
+        </div>
+
+        <h3>
+          Context
+        </h3>
+
+        <p>
+          Explain what the website is for,
+          who will use it and the overall
+          purpose of the project.
+        </p>
+
+      </article>
+
+
+
+      <article class="ctf-card">
+
+        <div class="ctf-letter">
+          T
+        </div>
+
+        <h3>
+          Task
+        </h3>
+
+        <p>
+          Tell AI exactly what it should build:
+          the sections, features, interactions
+          and content you need.
+        </p>
+
+      </article>
+
+
+
+      <article class="ctf-card">
+
+        <div class="ctf-letter">
+          F
+        </div>
+
+        <h3>
+          Format
+        </h3>
+
+        <p>
+          Specify the expected output,
+          such as a complete mobile-friendly
+          HTML file ready to copy and paste.
+        </p>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================
+     PROMPT EXAMPLE
+========================================= -->
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="heading">
+
+      <small>
+        💬 THINK LIKE AN ARCHITECT
+      </small>
+
+      <h2>
+        Don't just say:
+        “Make me a website.”
+      </h2>
+
+      <p>
+        Describe the digital experience
+        before asking AI to construct it.
+      </p>
+
+    </div>
+
+
+    <div class="rule-zero">
+
+
+      <article class="rule-card bad">
+
+        <small>
+          ❌ WEAK INSTRUCTION
+        </small>
+
+        <code>
+          Make a website for me.
+        </code>
+
+        <p>
+          The objective is too broad.
+          AI has to guess the audience,
+          sections, style and functionality.
+        </p>
+
+      </article>
+
+
+
+      <article class="rule-card good">
+
+        <small>
+          ✅ ARCHITECT MINDSET
+        </small>
+
+        <p>
+          Tell AI the purpose of the website,
+          the target audience, required sections,
+          desired experience and the exact
+          output format you need.
+        </p>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================
+     COPY → PASTE → DEPLOY
+========================================= -->
+
+<section class="section soft">
+
+  <div class="container">
+
+    <div class="heading">
+
+      <small>
+        ⚙️ THE ZERO-CODE WORKFLOW
+      </small>
+
+      <h2>
+        Prompt.
+        Copy.
+        Paste.
+        Deploy.
+      </h2>
+
+      <p>
+        This is the practical loop that turns
+        your AI conversation into something
+        people can actually open on the web.
+      </p>
+
+    </div>
+
+
+    <div class="copy-grid">
+
+
+      <article class="copy-card">
+
+        <small>
+          01 • PROMPT
+        </small>
+
+        <h3>
+          Explain Your Vision
+        </h3>
+
+        <p>
+          Give AI enough context and clear
+          requirements for the website.
+        </p>
+
+      </article>
+
+
+
+      <article class="copy-card">
+
+        <small>
+          02 • COPY
+        </small>
+
+        <h3>
+          Take the Code
+        </h3>
+
+        <p>
+          Copy the generated HTML/CSS/JS
+          carefully without accidentally
+          cutting parts of the code.
+        </p>
+
+      </article>
+
+
+
+      <article class="copy-card">
+
+        <small>
+          03 • PASTE
+        </small>
+
+        <h3>
+          Put It in GitHub
+        </h3>
+
+        <p>
+          Paste the code into the correct
+          repository file and commit it.
+        </p>
+
+      </article>
+
+
+    </div>
+
+
+
+    <div
+      class="copy-grid"
+      style="margin-top:12px;"
+    >
+
+
+      <article class="copy-card">
+
+        <small>
+          04 • DEPLOY
+        </small>
+
+        <h3>
+          Publish With Pages
+        </h3>
+
+        <p>
+          Enable GitHub Pages and turn
+          your stored project into
+          an accessible website.
+        </p>
+
+      </article>
+
+
+
+      <article class="copy-card">
+
+        <small>
+          05 • TEST
+        </small>
+
+        <h3>
+          Open the Website
+        </h3>
+
+        <p>
+          Check the page on mobile and desktop.
+          Test buttons, links, images and layout.
+        </p>
+
+      </article>
+
+
+
+      <article class="copy-card">
+
+        <small>
+          06 • IMPROVE
+        </small>
+
+        <h3>
+          Return to AI
+        </h3>
+
+        <p>
+          Describe what needs changing,
+          update the code and deploy
+          the improved version again.
+        </p>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================
+     CLASSROOM MEMORY
+========================================= -->
+
+<section class="section dark-section">
+
+  <div class="container">
+
+    <div class="heading">
+
+      <small>
+        🔥 REMEMBER THE LOOP
+      </small>
+
+      <h2>
+        Your first version
+        doesn't have to be your final version.
+      </h2>
+
+      <p>
+        Building with AI is iterative.
+        Create something, test it, identify
+        the problem, improve the instruction
+        and update the project.
+      </p>
+
+    </div>
+
+
+    <div class="loop-grid">
+
+
+      <article class="loop-card">
+
+        <div class="loop-icon">
+          💡
+        </div>
+
+        <h3>
+          IDEA
+        </h3>
+
+        <p>
+          Decide what
+          should exist.
+        </p>
+
+      </article>
+
+
+
+      <article class="loop-card">
+
+        <div class="loop-icon">
+          🤖
+        </div>
+
+        <h3>
+          BUILD
+        </h3>
+
+        <p>
+          Use AI to turn
+          intent into code.
+        </p>
+
+      </article>
+
+
+
+      <article class="loop-card">
+
+        <div class="loop-icon">
+          🌐
+        </div>
+
+        <h3>
+          DEPLOY
+        </h3>
+
+        <p>
+          Put the creation
+          on the web.
+        </p>
+
+      </article>
+
+
+
+      <article class="loop-card">
+
+        <div class="loop-icon">
+          🔁
+        </div>
+
+        <h3>
+          IMPROVE
+        </h3>
+
+        <p>
+          Test, revise
+          and build again.
+        </p>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ===== END CLASS-3 CHUNK 4 ===== -->
+  <!-- ===== START CLASS-3 CHUNK 5 ===== -->
+
+
+<!-- =========================================
+     FROM CREATION TO VALUE
+========================================= -->
+
+<section class="section white">
+
+  <div class="container">
+
+    <div class="heading">
+
+      <small>
+        💼 FROM CREATOR TO BUILDER
+      </small>
+
+      <h2>
+        A website is not just
+        a classroom experiment.
+      </h2>
+
+      <p>
+        Once you understand the build-and-deploy
+        workflow, the same process can be repeated
+        for different ideas, projects and
+        real-world requirements.
+      </p>
+
+    </div>
+
+
+    <div class="money-grid">
+
+
+      <article class="money-card">
+
+        <small>
+          BUILD FOR YOURSELF
+        </small>
+
+        <h3>
+          Turn Ideas Into Digital Assets
+        </h3>
+
+        <p>
+          Create project pages, portfolios,
+          information websites and other
+          useful digital experiences.
+        </p>
+
+      </article>
+
+
+      <article class="money-card">
+
+        <small>
+          BUILD FOR OTHERS
+        </small>
+
+        <h3>
+          Solve Real Problems
+        </h3>
+
+        <p>
+          The same workflow can be adapted
+          to create useful web experiences
+          for people, organisations or projects.
+        </p>
+
+      </article>
+
+
+      <article class="money-card">
+
+        <small>
+          IMPROVE
+        </small>
+
+        <h3>
+          One Version at a Time
+        </h3>
+
+        <p>
+          Test the project, identify what
+          needs improvement and return to AI
+          with more precise instructions.
+        </p>
+
+      </article>
+
+
+      <article class="money-card">
+
+        <small>
+          SCALE
+        </small>
+
+        <h3>
+          Repeat the System
+        </h3>
+
+        <p>
+          Once the workflow becomes familiar,
+          you can apply the same architecture
+          to increasingly ambitious projects.
+        </p>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================
+     THE ZERO-CODE ARCHITECT MINDSET
+========================================= -->
+
+<section class="section soft">
+
+  <div class="container">
+
+    <div class="heading">
+
+      <small>
+        🏗️ THE ARCHITECT MINDSET
+      </small>
+
+      <h2>
+        You don't need to type
+        every brick yourself.
+      </h2>
+
+      <p>
+        The architect's job is to understand
+        what should be built, communicate the
+        vision clearly and inspect whether
+        the final structure works.
+      </p>
+
+    </div>
+
+
+    <div class="copy-grid">
+
+
+      <article class="copy-card">
+
+        <small>
+          01
+        </small>
+
+        <h3>
+          Imagine
+        </h3>
+
+        <p>
+          Start with a clear idea
+          of what you want to create.
+        </p>
+
+      </article>
+
+
+      <article class="copy-card">
+
+        <small>
+          02
+        </small>
+
+        <h3>
+          Instruct
+        </h3>
+
+        <p>
+          Translate the idea into
+          a structured AI prompt.
+        </p>
+
+      </article>
+
+
+      <article class="copy-card">
+
+        <small>
+          03
+        </small>
+
+        <h3>
+          Inspect
+        </h3>
+
+        <p>
+          Test what AI created instead
+          of assuming the first output
+          is automatically correct.
+        </p>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================
+     QUICK RECALL
+========================================= -->
+
+<section class="section white">
+
+  <div class="container">
+
+    <div class="heading">
+
+      <small>
+        🧠 QUICK RECALL
+      </small>
+
+      <h2>
+        Can you still build it
+        without looking at the slides?
+      </h2>
+
+      <p>
+        Tap a question to reveal its answer.
+        This isn't a test — it's a memory refresh.
+      </p>
+
+    </div>
+
+
+    <div class="recall-grid">
+
+
+      <div class="recall">
+
+        <button type="button">
+          What is the most important homepage filename? +
+        </button>
+
+        <div class="answer">
+          <strong>index.html</strong> —
+          written exactly in lowercase.
+        </div>
+
+      </div>
+
+
+      <div class="recall">
+
+        <button type="button">
+          What does HTML do? +
+        </button>
+
+        <div class="answer">
+          HTML provides the basic structure or
+          “skeleton” of the webpage.
+        </div>
+
+      </div>
+
+
+      <div class="recall">
+
+        <button type="button">
+          What does CSS do? +
+        </button>
+
+        <div class="answer">
+          CSS controls the visual presentation —
+          the “clothes” of the webpage.
+        </div>
+
+      </div>
+
+
+      <div class="recall">
+
+        <button type="button">
+          What does JavaScript do? +
+        </button>
+
+        <div class="answer">
+          JavaScript adds behaviour and interaction —
+          the “muscles” of the webpage.
+        </div>
+
+      </div>
+
+
+      <div class="recall">
+
+        <button type="button">
+          What is a GitHub repository in this workflow? +
+        </button>
+
+        <div class="answer">
+          It is the digital space where the
+          files of your website project are stored.
+        </div>
+
+      </div>
+
+
+      <div class="recall">
+
+        <button type="button">
+          What does GitHub Pages do? +
+        </button>
+
+        <div class="answer">
+          GitHub Pages publishes the project
+          so the website can be opened
+          through a web address.
+        </div>
+
+      </div>
+
+
+      <div class="recall">
+
+        <button type="button">
+          What does C-T-F mean? +
+        </button>
+
+        <div class="answer">
+          <strong>Context • Task • Format.</strong>
+          The same prompting framework learned
+          earlier can be used to give AI clearer
+          website-building instructions.
+        </div>
+
+      </div>
+
+
+      <div class="recall">
+
+        <button type="button">
+          What is the Zero-Code workflow? +
+        </button>
+
+        <div class="answer">
+          Define the idea → prompt AI →
+          copy the generated code →
+          paste it into the correct GitHub file →
+          commit → publish → test → improve.
+        </div>
+
+      </div>
+
+
+      <div class="recall">
+
+        <button type="button">
+          Is the first AI-generated version automatically final? +
+        </button>
+
+        <div class="answer">
+          No. Test the website, find problems,
+          refine your instructions and improve
+          the project iteratively.
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================
+     REVISIT CLASS 3
+========================================= -->
+
+<section class="section soft">
+
+  <div class="container">
+
+    <div class="heading">
+
+      <small>
+        🎥 REVISIT THE CLASS
+      </small>
+
+      <h2>
+        Don't just remember it.
+        Watch it happen again.
+      </h2>
+
+      <p>
+        Start with the short supporting video
+        for a quick refresh, or replay the full
+        Day 3 online class when you want the
+        complete learning experience.
+      </p>
+
+    </div>
+
+
+    <div class="video-grid">
+
+
+      <!-- =====================================
+           SUPPORTING / UNLISTED SHORT
+      ====================================== -->
+
+      <article class="video-card">
+
+        <div class="video-frame short-frame">
+
+          <iframe
+            src="https://www.youtube.com/embed/188TXnfq7Ug"
+            title="Class 3 Supporting Video"
+            loading="lazy"
+            allow="
+              accelerometer;
+              autoplay;
+              clipboard-write;
+              encrypted-media;
+              gyroscope;
+              picture-in-picture;
+              web-share
+            "
+            allowfullscreen>
+          </iframe>
+
+        </div>
+
+
+        <div class="video-info">
+
+          <small>
+            🎬 SUPPORTING VIDEO
+          </small>
+
+          <h3>
+            Day 3 Quick Refresh
+          </h3>
+
+          <p>
+            Revisit a short supporting resource
+            connected with the Zero-Code
+            Architect classroom experience.
+          </p>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- =====================================
+           FULL ONLINE CLASS
+      ====================================== -->
+
+      <article class="video-card">
+
+        <div class="video-frame">
+
+          <iframe
+            src="https://www.youtube.com/embed/twM2VDsTcvU"
+            title="Class 3 Full Online Class"
+            loading="lazy"
+            allow="
+              accelerometer;
+              autoplay;
+              clipboard-write;
+              encrypted-media;
+              gyroscope;
+              picture-in-picture;
+              web-share
+            "
+            allowfullscreen>
+          </iframe>
+
+        </div>
+
+
+        <div class="video-info">
+
+          <small>
+            ▶ FULL ONLINE CLASS
+          </small>
+
+          <h3>
+            Watch Day 3 Again
+          </h3>
+
+          <p>
+            Return to the complete classroom session
+            and revisit the website-building workflow
+            from idea and prompting to GitHub
+            and deployment.
+          </p>
+
+        </div>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ===== END CLASS-3 CHUNK 5 ===== -->
+  <!-- ===== START CLASS-3 CHUNK 6 ===== -->
+
+
+<!-- =========================================
+     ORIGINAL CLASS MATERIAL
+========================================= -->
+
+<section class="section white">
+
+  <div class="container">
+
+    <div class="heading">
+
+      <small>
+        📚 ORIGINAL CLASS MATERIAL
+      </small>
+
+      <h2>
+        Reopen the Zero-Code
+        Architect presentation.
+      </h2>
+
+      <p>
+        Use the original Day 3 classroom material
+        whenever you want to revisit the complete
+        website-building and deployment journey.
+      </p>
+
+    </div>
+
+
+    <div class="material">
+
+      <div>
+
+        <h2>
+          🏗️ The Zero Code Architect
+        </h2>
+
+        <p>
+          Original Day 3 classroom presentation.
+          Open the PPTX directly from the
+          Phoenix Digital Classroom.
+        </p>
+
+      </div>
+
+
+      <a
+        class="material-btn"
+        href="materials/The%20Zero%20Code%20Architect.pptx"
+        target="_blank"
+        rel="noopener"
+      >
+        OPEN CLASS MATERIAL →
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================
+     FINAL DAY 3 TAKEAWAY
+========================================= -->
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="takeaway">
+
+      <span class="kicker">
+        🦅 DAY 03 TAKEAWAY
+      </span>
+
+
+      <h2>
+        Don't just use AI.
+        Build with it.
+      </h2>
+
+
+      <p>
+        Day 3 transformed the learner
+        from an AI user into a digital creator.
+
+        An idea can become instructions.
+        Instructions can become code.
+        Code can become a live website.
+
+        And that website can become the
+        beginning of something much bigger.
+      </p>
+
+
+
+      <div
+        class="loop-grid"
+        style="
+          margin-top:28px;
+          text-align:center;
+        "
+      >
+
+
+        <div class="loop-card">
+
+          <div class="loop-icon">
+            💡
+          </div>
+
+          <h3>
+            IMAGINE
+          </h3>
+
+          <p>
+            Start with
+            the idea.
+          </p>
+
+        </div>
+
+
+        <div class="loop-card">
+
+          <div class="loop-icon">
+            🤖
+          </div>
+
+          <h3>
+            GENERATE
+          </h3>
+
+          <p>
+            Turn intent
+            into code.
+          </p>
+
+        </div>
+
+
+        <div class="loop-card">
+
+          <div class="loop-icon">
+            🚀
+          </div>
+
+          <h3>
+            DEPLOY
+          </h3>
+
+          <p>
+            Take the creation
+            live.
+          </p>
+
+        </div>
+
+
+        <div class="loop-card">
+
+          <div class="loop-icon">
+            📈
+          </div>
+
+          <h3>
+            SCALE
+          </h3>
+
+          <p>
+            Improve and
+            build again.
+          </p>
+
+        </div>
+
+
+      </div>
+
+
+
+      <!-- NAVIGATION -->
+
+      <div class="next-row">
+
+
+        <a
+          href="class-2.html"
+          class="next"
+        >
+          ← Day 02
+        </a>
+
+
+        <a
+          href="index.html#journey"
+          class="next"
+        >
+          5-Day Journey
+        </a>
+
+
+        <button
+          type="button"
+          class="next"
+          id="nextClassBtn"
+        >
+          Continue to Day 04 →
+        </button>
+
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- =========================================
+     JAVASCRIPT
+========================================= -->
+
+<script>
+
+
+/* =========================================
+   QUICK RECALL ACCORDION
+========================================= */
+
+document
+.querySelectorAll(
+  ".recall button"
+)
+.forEach(
+  function(button){
+
+
+    button.addEventListener(
+      "click",
+      function(){
+
+
+        const card =
+          button.parentElement;
+
+
+        const wasOpen =
+          card.classList
+          .contains(
+            "open"
+          );
+
+
+        card.classList
+        .toggle(
+          "open"
+        );
+
+
+        const cleanText =
+          button
+          .textContent
+          .replace(
+            /[+−]\s*$/,
+            ""
+          )
+          .trim();
+
+
+        button.textContent =
+          cleanText
+          +
+          (
+            wasOpen
+            ? " +"
+            : " −"
+          );
+
+
+      }
+    );
+
+
+  }
+);
+
+
+
+/* =========================================
+   DAY 04 PLACEHOLDER
+
+   Once class-4.html is created,
+   change this temporary action to:
+
+   window.location.href = "class-4.html";
+========================================= */
+
+const nextClassBtn =
+  document.getElementById(
+    "nextClassBtn"
+  );
+
+
+if(nextClassBtn){
+
+  nextClassBtn.addEventListener(
+    "click",
+    function(){
+
+
+      const goBack =
+        confirm(
+          "Day 04 Digital Classroom will be connected after its class materials are added. Return to the 5-Day Journey for now?"
+        );
+
+
+      if(goBack){
+
+        window.location.href =
+          "index.html#journey";
+
+      }
+
+
+    }
+  );
+
+}
+
+
+
+/* =========================================
+   EXTERNAL MATERIAL SAFETY
+
+   The PPTX opens in a new tab/browser.
+   Behaviour depends on the participant's
+   device and browser.
+========================================= */
+
+</script>
+
+
+</body>
+
+</html>
+
+<!-- ===== END CLASS-3 CHUNK 6 ===== -->
